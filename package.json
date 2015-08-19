@@ -1,0 +1,38 @@
+{
+  "name": "nmusic",
+  "version": "0.0.0",
+  "description": "a JavaScript music library for easy programmatic music composition",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrleszcz/nmusic.git"
+  },
+  "keywords": [
+    "music theory",
+    "music",
+    "scales",
+    "scale",
+    "note",
+    "interval"
+  ],
+  "author": {
+    "name": "John Leszczynski",
+    "email": "jrleszczynski@gmail.com",
+    "url": "http://johnleszczynski.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jrleszcz/nmusic/issues"
+  },
+  "homepage": "https://github.com/jrleszcz/nmusic#readme",
+  "devDependencies": {
+    "eslint": "^1.2.0",
+    "tape": "^4.2.0"
+  }
+}
