@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tape test/*.test.js"
+    "test": "eslint --no-eslintrc -c .eslintrc lib/*.js && tape test/*.test.js"
   },
   "repository": {
     "type": "git",
