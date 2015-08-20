@@ -6,6 +6,11 @@
     "strict": [0],
     "semi": [2, "never"],
     "quotes": [2, "single"],
+    "valid-jsdoc": [2, {
+        "prefer": {
+            "return": "returns"
+        }
+    }],
     "curly": [0],
     "no-alert": [0],
     "new-cap": [0],
