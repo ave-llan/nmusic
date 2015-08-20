@@ -3,11 +3,11 @@
 Parse a pitch string and return its properties
 
 **Kind**: global function  
-**Returns**: <code>object</code> &#124; <code>false</code> - - False if invalid pitch string or an object with the following properties:
-- .letter: string
-- .accidental: string
-- .octave: integer
-- .sciPitch: full scientific pitch with valid format  
+**Returns**: <code>object</code> &#124; <code>false</code> - False if invalid pitch string or an object with the following properties:
+- letter: string
+- accidental: string
+- octave: integer
+- sciPitch: string  
 
 | Param | Type | Description |
 | --- | --- | --- |
