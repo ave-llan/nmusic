@@ -17,12 +17,25 @@ test('new Pitches can be created', function(t) {
     t.end()
 })
 
+
+test('Pitch.toString() generates the correct string', function(t) {
+    t.equal((new Pitch('Bb5')).toString(), 'Bb5')
+
+    var harmonic = 'C#3 D#3 E3 F#3 G#3 A3 B#3 C#4'
+    var mapped = harmonic.split(' ').map(function(pitch) {
+        return new Pitch(pitch)
+    }).join(' ')
+    t.equal(mapped, harmonic, "toString is being called automatically")
+
+    t.end()
+})
+
 test('Pitch.halfSteps() returns the correct number', function(t) {
     t.equal((new Pitch('A##9')).halfSteps(), 2)
     t.equal((new Pitch('G#2')).halfSteps(), 1)
     t.equal((new Pitch('F4')).halfSteps(), 0)
     t.equal((new Pitch('Bb3')).halfSteps(), -1)
     t.equal((new Pitch('Dbb7')).halfSteps(), -2)
-    
+
     t.end()
 })
