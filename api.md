@@ -21,7 +21,8 @@
 
 * [Pitch](#Pitch)
   * [new Pitch(sciPitch)](#new_Pitch_new)
-  * [.toString()](#Pitch+toString) ⇒ <code>string</code>
+  * [.toString()](#Pitch+toString) ⇒ <code>String</code>
+  * [.halfSteps()](#Pitch+halfSteps) ⇒ <code>Number</code>
 
 <a name="new_Pitch_new"></a>
 ### new Pitch(sciPitch)
@@ -42,9 +43,16 @@ var p = new Pitch('Bb3')
 p.name => 'Bb3'
 ```
 <a name="Pitch+toString"></a>
-### pitch.toString() ⇒ <code>string</code>
+### pitch.toString() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
-**Returns**: <code>string</code> - string in scientfic pitch notation  
+**Returns**: <code>String</code> - string in scientfic pitch notation  
+<a name="Pitch+halfSteps"></a>
+### pitch.halfSteps() ⇒ <code>Number</code>
+returns the number of accidentals on this letter:
+positive for sharps, negative for flats.
+
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Number</code> - how many half steps from its letter  
 <a name="parsePitch"></a>
 ## parsePitch(sciPitch) ⇒ <code>object</code> &#124; <code>false</code>
 Parse a pitch string and return its properties
