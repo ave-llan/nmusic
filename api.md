@@ -75,7 +75,7 @@ or '', the empty string if there is no accidental.
 ### pitch.pitchClass() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
 **Returns**: <code>String</code> - the [pitch class](https://en.wikipedia.org/wiki/Pitch_class)),
-same as {Pitch#sciPitch} but without octave number.  
+same as [sciPitch](#Pitch+sciPitch) but without octave number.  
 <a name="Pitch+numAccidental"></a>
 ### pitch.numAccidental() ⇒ <code>Number</code>
 returns the number of accidentals on this letter:
