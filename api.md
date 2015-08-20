@@ -6,7 +6,8 @@
 ## Functions
 <dl>
 <dt><a href="#parsePitch">parsePitch(sciPitch)</a> ⇒ <code>object</code> | <code>false</code></dt>
-<dd><p>Parse a pitch string and return its properties</p>
+<dd><p>Parse a pitch string and return its properties or 
+false if the string is not valid</p>
 </dd>
 </dl>
 <a name="Pitch"></a>
@@ -60,10 +61,12 @@ p.halfSteps() => -2
 ```
 <a name="parsePitch"></a>
 ## parsePitch(sciPitch) ⇒ <code>object</code> &#124; <code>false</code>
-Parse a pitch string and return its properties
+Parse a pitch string and return its properties or 
+false if the string is not valid
 
 **Kind**: global function  
-**Returns**: <code>object</code> &#124; <code>false</code> - False if invalid pitch string or an object with the following properties:
+**Returns**: <code>object</code> &#124; <code>false</code> - False if invalid pitch string or an object 
+with the following properties:
 - letter: string
 - accidental: string
 - octave: integer
@@ -76,4 +79,5 @@ Parse a pitch string and return its properties
 **Example**  
 ```js
 parsePitch('Bb3')   => {letter: 'B', accidental: 'b', octave: 3, sciPitch:'Bb3'} 
+prasePitch('Xb4')   => false
 ```
