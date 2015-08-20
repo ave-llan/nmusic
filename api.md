@@ -53,6 +53,11 @@ positive for sharps, negative for flats.
 
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
 **Returns**: <code>Number</code> - how many half steps from its letter  
+**Example**  
+```js
+var p = new Pitch('Abb3')
+p.halfSteps() => -2
+```
 <a name="parsePitch"></a>
 ## parsePitch(sciPitch) ⇒ <code>object</code> &#124; <code>false</code>
 Parse a pitch string and return its properties
