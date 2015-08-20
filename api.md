@@ -56,7 +56,7 @@ p.name => 'Bb3'
 ### pitch.sciPitch() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
 **Returns**: <code>String</code> - in [scientfic pitch notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation) 
-(same as Pitch.name)  
+(same as [Pitch.name](Pitch#name))  
 <a name="Pitch+letter"></a>
 ### pitch.letter() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
@@ -74,15 +74,15 @@ or '', the empty string if there is no accidental.
 <a name="Pitch+pitchClass"></a>
 ### pitch.pitchClass() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
-**Returns**: <code>String</code> - the [pitch class](https://en.wikipedia.org/wiki/Pitch_class)),
-same as [sciPitch](#Pitch+sciPitch) but without octave number.  
+**Returns**: <code>String</code> - the [pitch class](https://en.wikipedia.org/wiki/Pitch_class),
+same as [Pitch.sciPitch()](#Pitch+sciPitch) but without octave number.  
 <a name="Pitch+numAccidental"></a>
 ### pitch.numAccidental() ⇒ <code>Number</code>
 returns the number of accidentals on this letter:
 positive for sharps, negative for flats.
 
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
-**Returns**: <code>Number</code> - how many half steps from its letter  
+**Returns**: <code>Number</code> - how many half steps from its letter, will be in the range [-2, 2]  
 **Example**  
 ```js
 var p = new Pitch('Abb3')
