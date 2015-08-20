@@ -18,14 +18,18 @@
 | --- | --- | --- |
 | Pitch.name | <code>string</code> | this pitch in scientific pitch notation |
 
+
+* [Pitch](#Pitch)
+  * [new Pitch(sciPitch)](#new_Pitch_new)
+  * [.toString()](#Pitch+toString) ⇒ <code>string</code>
+
 <a name="new_Pitch_new"></a>
 ### new Pitch(sciPitch)
 Creates a new immutable Pitch.
 
-**Returns**: <code>[Pitch](#Pitch)</code> - a new Pitch  
 **Throws**:
 
-- Will throw an error if string is not a valid pitch.
+- Will throw an error if string is not a valid pitch
 
 
 | Param | Type | Description |
@@ -37,6 +41,10 @@ Creates a new immutable Pitch.
 var p = new Pitch('Bb3')
 p.name => 'Bb3'
 ```
+<a name="Pitch+toString"></a>
+### pitch.toString() ⇒ <code>string</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>string</code> - string in scientfic pitch notation  
 <a name="parsePitch"></a>
 ## parsePitch(sciPitch) ⇒ <code>object</code> &#124; <code>false</code>
 Parse a pitch string and return its properties
