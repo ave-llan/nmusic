@@ -1,3 +1,42 @@
+## Classes
+<dl>
+<dt><a href="#Pitch">Pitch</a></dt>
+<dd></dd>
+</dl>
+## Functions
+<dl>
+<dt><a href="#parsePitch">parsePitch(sciPitch)</a> ⇒ <code>object</code> | <code>false</code></dt>
+<dd><p>Parse a pitch string and return its properties</p>
+</dd>
+</dl>
+<a name="Pitch"></a>
+## Pitch
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| Pitch.name | <code>string</code> | this pitch in scientific pitch notation |
+
+<a name="new_Pitch_new"></a>
+### new Pitch(sciPitch)
+Creates a new immutable Pitch.
+
+**Returns**: <code>[Pitch](#Pitch)</code> - a new Pitch  
+**Throws**:
+
+- Will throw an error if string is not a valid pitch.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| sciPitch | <code>string</code> | a pitch in scientific pitch notation |
+
+**Example**  
+```js
+var p = new Pitch('Bb3')
+p.name => 'Bb3'
+```
 <a name="parsePitch"></a>
 ## parsePitch(sciPitch) ⇒ <code>object</code> &#124; <code>false</code>
 Parse a pitch string and return its properties
