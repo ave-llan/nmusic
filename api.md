@@ -79,5 +79,5 @@ with the following properties:
 **Example**  
 ```js
 parsePitch('Bb3')   => {letter: 'B', accidental: 'b', octave: 3, sciPitch:'Bb3'} 
-prasePitch('Xb4')   => false
+parsePitch('Xb4')   => false
 ```
