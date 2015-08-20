@@ -29,6 +29,11 @@ To run eslint and tape tests:
 npm test
 ```
 
+To generate api documentation:
+```
+npm run docs
+```
+
 ### Background & Credits
 
 I got into programming by trying to solve music composition problems programmatically.  My first project was a simple object oriented music library which I made from scratch to [counterpoint problems](https://github.com/jrleszcz/Computational-Counterpoint). As I've learned more, I've come back to that library and refactored it several times, and now I aim to completely rebuild it. 
