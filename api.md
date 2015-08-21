@@ -12,6 +12,9 @@
 <dd><p>parses a pitch string and return its components in an object or
 false if the string is not valid</p>
 </dd>
+<dt><a href="#semitonesBetween">semitonesBetween(sciPitch1, sciPitch2)</a> ⇒ <code>Number</code></dt>
+<dd><p>the number of semitones between these two pitch strings</p>
+</dd>
 <dt><a href="#toMidi">toMidi(sciPitch)</a> ⇒ <code>Number</code></dt>
 <dd><p>the <a href="http://newt.phys.unsw.edu.au/jw/notes.html">midi number</a> of this pitch string</p>
 </dd>
@@ -236,6 +239,28 @@ with the following properties:
 ```js
 parsePitch('Bb3')   => {letter: 'B', accidental: 'b', numAccidental: -1, octave: 3, sciPitch:'Bb3'}
 parsePitch('Xb4')   => false
+```
+<a name="semitonesBetween"></a>
+## semitonesBetween(sciPitch1, sciPitch2) ⇒ <code>Number</code>
+the number of semitones between these two pitch strings
+
+**Kind**: global function  
+**Returns**: <code>Number</code> - the semitones between these two pitch strings.  
+**Throws**:
+
+- Will throw an error if string is not a valid pitch
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| sciPitch1 | <code>String</code> | a pitch in scientific pitch notation. |
+| sciPitch2 | <code>String</code> | a pitch in scientific pitch notation. |
+
+**Example**  
+```js
+semitonesBetween('C4', 'Db4')   => 1
+semitonesBetween('C4', 'B#3')   => 0
+semitonesBetween('C4', 'C5')    => 12
 ```
 <a name="toMidi"></a>
 ## toMidi(sciPitch) ⇒ <code>Number</code>
