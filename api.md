@@ -9,7 +9,7 @@
 <dd><p>the generic interval size between two pitch strings, disregarding accidentals</p>
 </dd>
 <dt><a href="#parsePitch">parsePitch(sciPitch)</a> ⇒ <code>object</code> | <code>false</code></dt>
-<dd><p>Parse a pitch string and return its properties or
+<dd><p>parses a pitch string and return its components in an object or
 false if the string is not valid</p>
 </dd>
 <dt><a href="#toMidi">toMidi(sciPitch)</a> ⇒ <code>Number</code></dt>
@@ -172,7 +172,7 @@ intervalSize('C5', 'C5')    => 1
 ```
 <a name="parsePitch"></a>
 ## parsePitch(sciPitch) ⇒ <code>object</code> &#124; <code>false</code>
-Parse a pitch string and return its properties or
+parses a pitch string and return its components in an object or
 false if the string is not valid
 
 **Kind**: global function  
