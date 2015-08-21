@@ -3,10 +3,11 @@ var parsePitch = require('../lib/parse-pitch.js')
 
 test('pitch parsing works for notes without accidentals', function(t) {
     var pitch_F4 = {
-            letter: 'F',
-        accidental: '',
-            octave: 4,
-          sciPitch: 'F4'
+               letter: 'F',
+           accidental: '',
+        numAccidental: 0,
+               octave: 4,
+             sciPitch: 'F4'
     }
 
     t.deepEqual(parsePitch('F4'), pitch_F4)
@@ -20,10 +21,11 @@ test('pitch parsing works for notes without accidentals', function(t) {
 
 test('pitch parsing works for notes with accidentals', function(t) {
     var pitch_Bb3 = {
-            letter: 'B',
-        accidental: 'b',
-            octave: 3,
-          sciPitch: 'Bb3'
+               letter: 'B',
+           accidental: 'b',
+        numAccidental: -1,
+               octave: 3,
+             sciPitch: 'Bb3'
     }
 
     t.deepEqual(parsePitch('Bb3'), pitch_Bb3)

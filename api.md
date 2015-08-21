@@ -9,6 +9,9 @@
 <dd><p>Parse a pitch string and return its properties or 
 false if the string is not valid</p>
 </dd>
+<dt><a href="#toMidi">toMidi(sciPitch)</a> ⇒ <code>Number</code></dt>
+<dd><p>What is the <a href="http://newt.phys.unsw.edu.au/jw/notes.html">midi number</a> of this pitch?</p>
+</dd>
 </dl>
 <a name="Pitch"></a>
 ## Pitch
@@ -56,7 +59,7 @@ p.name => 'Bb3'
 ### pitch.sciPitch() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
 **Returns**: <code>String</code> - in [scientfic pitch notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation) 
-(same as [Pitch.name](Pitch#name))  
+(same as Pitch.name)  
 <a name="Pitch+letter"></a>
 ### pitch.letter() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
@@ -98,6 +101,7 @@ false if the string is not valid
 with the following properties:
 - letter: string
 - accidental: string
+- numAccidental: number of accidentals [-2, 2], positive for sharps, negative for flats
 - octave: integer
 - sciPitch: string  
 
@@ -107,6 +111,27 @@ with the following properties:
 
 **Example**  
 ```js
-parsePitch('Bb3')   => {letter: 'B', accidental: 'b', octave: 3, sciPitch:'Bb3'} 
+parsePitch('Bb3')   => {letter: 'B', accidental: 'b', numAccidental: -1, octave: 3, sciPitch:'Bb3'} 
 parsePitch('Xb4')   => false
+```
+<a name="toMidi"></a>
+## toMidi(sciPitch) ⇒ <code>Number</code>
+What is the [midi number](http://newt.phys.unsw.edu.au/jw/notes.html) of this pitch?
+
+**Kind**: global function  
+**Returns**: <code>Number</code> - the midi number for this pitch. C4 is 60.  
+**Throws**:
+
+- Will throw an error if string is not a valid pitch
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| sciPitch | <code>String</code> | a pitch in scientific pitch notation. |
+
+**Example**  
+```js
+toMidi('C4')    => 60
+toMidi('Bb3')   => 58
+toMidi('A#3')   => 58
 ```
