@@ -29,6 +29,7 @@ midi number.</p>
   * [new Pitch(sciPitch)](#new_Pitch_new)
   * [.toString()](#Pitch+toString) ⇒ <code>String</code>
   * [.valueOf()](#Pitch+valueOf) ⇒ <code>Number</code>
+  * [.equals(that)](#Pitch+equals) ⇒ <code>Boolean</code>
   * [.sciPitch()](#Pitch+sciPitch) ⇒ <code>String</code>
   * [.letter()](#Pitch+letter) ⇒ <code>String</code>
   * [.accidental()](#Pitch+accidental) ⇒ <code>String</code>
@@ -64,6 +65,15 @@ p.name => 'Bb3'
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
 **Returns**: <code>Number</code> - the midi number of this pitch, so enharmonic notes will be equal  
 **See**: [pitch.midi()](#Pitch+midi)  
+<a name="Pitch+equals"></a>
+### pitch.equals(that) ⇒ <code>Boolean</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Boolean</code> - is this pitch spelled the same as that pitch?  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> | another pitch |
+
 <a name="Pitch+sciPitch"></a>
 ### pitch.sciPitch() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  

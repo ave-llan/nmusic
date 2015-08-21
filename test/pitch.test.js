@@ -55,3 +55,15 @@ test('Pitch.numAccidental() returns the correct number', function (t) {
 
   t.end()
 })
+
+test('Pitch.equals() returns true only if notes spelled the same', function (t) {
+  var pitch_C4 = new Pitch('C4')
+  var pitch_Bb3 = new Pitch('Bb3')
+
+  t.ok(pitch_C4.equals(new Pitch('C4')))
+  t.ok(pitch_Bb3.equals(new Pitch('Bb3')))
+  t.notOk(pitch_C4.equals(new Pitch('B#3')))
+  t.notOk(pitch_Bb3.equals(new Pitch('A3')))
+
+  t.end()
+})
