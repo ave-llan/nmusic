@@ -132,6 +132,7 @@ What is the [midi number](http://newt.phys.unsw.edu.au/jw/notes.html) of this pi
 **Example**  
 ```js
 toMidi('C4')    => 60
+toMidi('B#3')   => 60
 toMidi('Bb3')   => 58
 toMidi('A#3')   => 58
 ```
