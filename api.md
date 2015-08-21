@@ -11,6 +11,9 @@
 <dt><a href="#intervalSize">intervalSize(sciPitch1, sciPitch2)</a> ⇒ <code>Number</code></dt>
 <dd><p>the generic interval size between two pitch strings, disregarding accidentals</p>
 </dd>
+<dt><a href="#interval">interval(sciPitch1, sciPitch2)</a> ⇒ <code>String</code></dt>
+<dd><p>the interval between two pitch strings</p>
+</dd>
 <dt><a href="#parsePitch">parsePitch(sciPitch)</a> ⇒ <code>object</code> | <code>false</code></dt>
 <dd><p>parses a pitch string and return its components in an object or
 false if the string is not valid</p>
@@ -248,6 +251,54 @@ Contrary to standard practice, an octave is considered compound and reduces to 1
 intervalSize.simple('C4', 'E4')    => 3
 intervalSize.simple('C4', 'E5')    => 3
 intervalSize.simple('C1', 'E9')    => 3
+```
+<a name="interval"></a>
+## interval(sciPitch1, sciPitch2) ⇒ <code>String</code>
+the interval between two pitch strings
+
+**Kind**: global function  
+**Returns**: <code>String</code> - the interval between the two pitches  
+**Throws**:
+
+- an error if either string is not a valid pitch
+
+**See**: [simple](#interval.simple) for returning the simple interval  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| sciPitch1 | <code>String</code> | a pitch in scientific pitch notation. |
+| sciPitch2 | <code>String</code> | a pitch in scientific pitch notation. |
+
+**Example**  
+```js
+interval('C4', 'E4')    => 'M3'
+interval('E4', 'Eb4')   => 'm3'
+interval('C4', 'F4')    => 'P4'
+interval('C4', 'F#4')   => 'A4'
+interval('B3', 'Ab4')   => 'd7'
+```
+<a name="interval.simple"></a>
+### interval.simple(sciPitch1, sciPitch2) ⇒ <code>Number</code>
+the simple interval between two pitch strings
+
+**Kind**: static method of <code>[interval](#interval)</code>  
+**Returns**: <code>Number</code> - the simple interval between the two pitches.
+Contrary to standard practice, an octave is considered compound and reduces to 1 as in [simple](#intervalSize.simple)  
+**Throws**:
+
+- an error if string is not a valid pitch
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| sciPitch1 | <code>String</code> | a pitch in scientific pitch notation. |
+| sciPitch2 | <code>String</code> | a pitch in scientific pitch notation. |
+
+**Example**  
+```js
+interval.simple('C4', 'E4')    => 'M3'
+interval.simple('C4', 'E5')    => 'M3'
+interval.simple('C1', 'E9')    => 'M3'
 ```
 <a name="parsePitch"></a>
 ## parsePitch(sciPitch) ⇒ <code>object</code> &#124; <code>false</code>
