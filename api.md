@@ -26,7 +26,8 @@ false if the string is not valid</p>
 <dd><p>the number of semitones between these two pitch strings</p>
 </dd>
 <dt><a href="#simplifyIntervalSize">simplifyIntervalSize(intervalSize)</a> ⇒ <code>Number</code></dt>
-<dd><p>simplify compound intervals to within the range of 1-7</p>
+<dd><p>simplify compound intervals to within the range of 1-7. Works for
+negative intervals as well.</p>
 </dd>
 <dt><a href="#toMidi">toMidi(sciPitch)</a> ⇒ <code>Number</code></dt>
 <dd><p>the <a href="http://newt.phys.unsw.edu.au/jw/notes.html">midi number</a> of this pitch string</p>
@@ -401,7 +402,8 @@ semitonesBetween('C4', 'C5')    => 12
 ```
 <a name="simplifyIntervalSize"></a>
 ## simplifyIntervalSize(intervalSize) ⇒ <code>Number</code>
-simplify compound intervals to within the range of 1-7
+simplify compound intervals to within the range of 1-7. Works for
+negative intervals as well.
 
 **Kind**: global function  
 **Returns**: <code>Number</code> - the simplified interval  
