@@ -178,11 +178,11 @@ the interval quality between two pitch strings
 
 **Kind**: global function  
 **Returns**: <code>String</code> - a character representing the interval between the two pitches:
--'P' = perfect
--'m' = minor
--'M' = major
--'d' = diminished
--'A' = augmented  
+- 'P' = perfect
+- 'm' = minor
+- 'M' = major
+- 'd' = diminished
+- 'A' = augmented  
 **Throws**:
 
 - an error if either string is not a valid pitch
