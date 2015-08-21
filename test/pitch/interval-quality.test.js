@@ -19,7 +19,6 @@ test('intervalQuality()', function (t) {
   t.equal(intervalQuality('C4', 'B4'), 'M')
   t.equal(intervalQuality('C4', 'B#4'), 'A')
   t.equal(intervalQuality('C4', 'C5'), 'P')
-  t.equal(intervalQuality('C4', 'C4'), 'P')
   t.equal(intervalQuality('C4', 'Cb5'), 'd')
   t.equal(intervalQuality('C4', 'C#5'), 'A')
   t.equal(intervalQuality('B#3', 'C4'), 'd')
