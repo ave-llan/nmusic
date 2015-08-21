@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "standard && tape test/*.test.js",
+    "test": "standard && tape test/**/*.test.js",
     "docs": "jsdoc2md lib/*.js > api.md"
   },
   "repository": {

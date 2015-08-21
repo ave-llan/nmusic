@@ -1,5 +1,5 @@
 var test = require('tape')
-var parsePitch = require('../lib/parse-pitch.js')
+var parsePitch = require('../../lib/pitch/parse-pitch.js')
 
 test('pitch parsing works for notes without accidentals', function (t) {
   var pitch_F4 = {

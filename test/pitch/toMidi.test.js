@@ -1,5 +1,5 @@
 var test = require('tape')
-var toMidi = require('../lib/toMidi.js')
+var toMidi = require('../../lib/pitch/to-midi.js')
 
 test('toMidi returns the correct number', function (t) {
   t.equal(toMidi('C4'), 60)

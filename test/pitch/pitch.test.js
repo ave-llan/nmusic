@@ -1,5 +1,5 @@
 var test = require('tape')
-var Pitch = require('../lib/pitch.js')
+var Pitch = require('../../lib/pitch/pitch.js')
 
 test('new Pitches can be created', function (t) {
   var pitch_Bb4 = new Pitch('Bb4')
