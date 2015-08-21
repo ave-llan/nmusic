@@ -40,6 +40,8 @@ false if the string is not valid</p>
   * [.numAccidental()](#Pitch+numAccidental) ⇒ <code>Number</code>
   * [.midi()](#Pitch+midi) ⇒ <code>Number</code>
   * [.semitonesTo(that)](#Pitch+semitonesTo) ⇒ <code>Number</code>
+  * [.intervalSize(that)](#Pitch+intervalSize) ⇒ <code>Number</code>
+  * [.simpleIntervalSize(that)](#Pitch+simpleIntervalSize) ⇒ <code>Number</code>
 
 <a name="new_Pitch_new"></a>
 ### new Pitch(sciPitch)
@@ -139,6 +141,26 @@ toMidi('A#3')   => 58
 ### pitch.semitonesTo(that) ⇒ <code>Number</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
 **Returns**: <code>Number</code> - how many half steps are there between these pitches?  
+
+| Param | Type |
+| --- | --- |
+| that | <code>[Pitch](#Pitch)</code> | 
+
+<a name="Pitch+intervalSize"></a>
+### pitch.intervalSize(that) ⇒ <code>Number</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Number</code> - the interval size between these pitches  
+**See**: [intervalSize](#intervalSize)  
+
+| Param | Type |
+| --- | --- |
+| that | <code>[Pitch](#Pitch)</code> | 
+
+<a name="Pitch+simpleIntervalSize"></a>
+### pitch.simpleIntervalSize(that) ⇒ <code>Number</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Number</code> - the simple interval size between these pitches in range [1,7]  
+**See**: [simple](#intervalSize.simple)  
 
 | Param | Type |
 | --- | --- |

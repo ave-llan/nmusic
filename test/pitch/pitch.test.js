@@ -108,3 +108,18 @@ test('Pitch.semitonesTo()', function (t) {
 
   t.end()
 })
+
+test('Pitch.intervalSize and Pitch.simpleIntervalSize', function (t) {
+  var pitch_C4 = new Pitch('C4')
+
+  t.equal(pitch_C4.intervalSize(new Pitch('C4')), 1)
+  t.equal(pitch_C4.intervalSize(new Pitch('C#5')), 8)
+  t.equal(pitch_C4.intervalSize(new Pitch('Cb6')), 15)
+  t.equal(pitch_C4.intervalSize(new Pitch('Bb4')), 7)
+  t.equal(pitch_C4.intervalSize(new Pitch('B#3')), 2)
+  t.equal(pitch_C4.simpleIntervalSize(new Pitch('C4')), 1)
+  t.equal(pitch_C4.simpleIntervalSize(new Pitch('C8')), 1)
+  t.equal(pitch_C4.simpleIntervalSize(new Pitch('Eb6')), 3)
+
+  t.end()
+})
