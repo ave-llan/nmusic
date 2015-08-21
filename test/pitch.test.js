@@ -67,3 +67,22 @@ test('Pitch.equals() returns true only if notes spelled the same', function (t) 
 
   t.end()
 })
+
+test('Pitch.isEnharmonic()', function (t) {
+  var pitch_C4 = new Pitch('C4')
+  var pitch_Bb3 = new Pitch('Bb3')
+
+  t.ok(pitch_C4.isEnharmonic(new Pitch('C4')))
+  t.ok(pitch_C4.isEnharmonic(new Pitch('B#3')))
+  t.ok(pitch_C4.isEnharmonic(new Pitch('Dbb4')))
+
+  t.ok(pitch_Bb3.isEnharmonic(new Pitch('Bb3')))
+  t.ok(pitch_Bb3.isEnharmonic(new Pitch('A#3')))
+
+  t.notOk(pitch_C4.isEnharmonic(new Pitch('C#4')))
+  t.notOk(pitch_C4.isEnharmonic(new Pitch('B3')))
+  t.notOk(pitch_Bb3.isEnharmonic(new Pitch('A##3')))
+  t.notOk(pitch_Bb3.isEnharmonic(new Pitch('A3')))
+
+  t.end()
+})

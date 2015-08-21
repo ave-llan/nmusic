@@ -30,6 +30,7 @@ midi number.</p>
   * [.toString()](#Pitch+toString) ⇒ <code>String</code>
   * [.valueOf()](#Pitch+valueOf) ⇒ <code>Number</code>
   * [.equals(that)](#Pitch+equals) ⇒ <code>Boolean</code>
+  * [.isEnharmonic(that)](#Pitch+isEnharmonic) ⇒ <code>Boolean</code>
   * [.sciPitch()](#Pitch+sciPitch) ⇒ <code>String</code>
   * [.letter()](#Pitch+letter) ⇒ <code>String</code>
   * [.accidental()](#Pitch+accidental) ⇒ <code>String</code>
@@ -70,9 +71,18 @@ p.name => 'Bb3'
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
 **Returns**: <code>Boolean</code> - is this pitch spelled the same as that pitch?  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| that | <code>[Pitch](#Pitch)</code> | another pitch |
+| Param | Type |
+| --- | --- |
+| that | <code>[Pitch](#Pitch)</code> | 
+
+<a name="Pitch+isEnharmonic"></a>
+### pitch.isEnharmonic(that) ⇒ <code>Boolean</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Boolean</code> - does this pitch sound identical to that pitch?  
+
+| Param | Type |
+| --- | --- |
+| that | <code>[Pitch](#Pitch)</code> | 
 
 <a name="Pitch+sciPitch"></a>
 ### pitch.sciPitch() ⇒ <code>String</code>
