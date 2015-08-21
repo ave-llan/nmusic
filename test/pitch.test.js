@@ -86,3 +86,25 @@ test('Pitch.isEnharmonic()', function (t) {
 
   t.end()
 })
+
+test('Pitch.semitonesTo()', function (t) {
+  var pitch_C4 = new Pitch('C4')
+  var pitch_Bb3 = new Pitch('Bb3')
+
+  t.equal(pitch_C4.semitonesTo(new Pitch('C4')), 0)
+  t.equal(pitch_C4.semitonesTo(new Pitch('C#4')), 1)
+  t.equal(pitch_C4.semitonesTo(new Pitch('B3')), 1)
+  t.equal(pitch_C4.semitonesTo(new Pitch('D4')), 2)
+  t.equal(pitch_C4.semitonesTo(new Pitch('C5')), 12)
+  t.equal(pitch_C4.semitonesTo(new Pitch('B#4')), 12)
+  t.equal(pitch_C4.semitonesTo(new Pitch('C3')), 12)
+  t.equal(pitch_C4.semitonesTo(new Pitch('B#2')), 12)
+  t.equal(pitch_C4.semitonesTo(new Pitch('Cb3')), 13)
+
+  t.equal(pitch_Bb3.semitonesTo(new Pitch('Bb3')), 0)
+  t.equal(pitch_Bb3.semitonesTo(new Pitch('A#3')), 0)
+  t.equal(pitch_Bb3.semitonesTo(new Pitch('C5')), 14)
+  t.equal(pitch_Bb3.semitonesTo(new Pitch('E5')), 18)
+
+  t.end()
+})

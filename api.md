@@ -38,6 +38,7 @@ midi number.</p>
   * [.pitchClass()](#Pitch+pitchClass) ⇒ <code>String</code>
   * [.numAccidental()](#Pitch+numAccidental) ⇒ <code>Number</code>
   * [.midi()](#Pitch+midi) ⇒ <code>Number</code>
+  * [.semitonesTo(that)](#Pitch+semitonesTo) ⇒ <code>Boolean</code>
 
 <a name="new_Pitch_new"></a>
 ### new Pitch(sciPitch)
@@ -133,6 +134,15 @@ toMidi('B#3')   => 60
 toMidi('Bb3')   => 58
 toMidi('A#3')   => 58
 ```
+<a name="Pitch+semitonesTo"></a>
+### pitch.semitonesTo(that) ⇒ <code>Boolean</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Boolean</code> - how many half steps are there between these pitches?  
+
+| Param | Type |
+| --- | --- |
+| that | <code>[Pitch](#Pitch)</code> | 
+
 <a name="parsePitch"></a>
 ## parsePitch(sciPitch) ⇒ <code>object</code> &#124; <code>false</code>
 Parse a pitch string and return its properties or
