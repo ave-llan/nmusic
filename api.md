@@ -14,7 +14,7 @@
 <dt><a href="#interval">interval(sciPitch1, sciPitch2)</a> ⇒ <code>String</code></dt>
 <dd><p>the interval between two pitch strings</p>
 </dd>
-<dt><a href="#parseInterval">parseInterval(an)</a> ⇒ <code>Object</code> | <code>false</code></dt>
+<dt><a href="#parseInterval">parseInterval(interval)</a> ⇒ <code>Object</code> | <code>false</code></dt>
 <dd><p>parses an interval string or number and return its components in an object or
 false if the string or number is not valid</p>
 </dd>
@@ -238,7 +238,8 @@ intervalQuality('B3', 'Ab4')   => 'd'
 the generic interval size between two pitch strings, disregarding accidentals
 
 **Kind**: global function  
-**Returns**: <code>Number</code> - the interval size between the two pitches.  
+**Returns**: <code>Number</code> - the absolute interval size between the two pitches. Always positive, even if
+the first argument is higher than the second.  
 **Throws**:
 
 - an error if string is not a valid pitch
@@ -330,7 +331,7 @@ interval.simple('C4', 'E5')    => 'M3'
 interval.simple('C1', 'E9')    => 'M3'
 ```
 <a name="parseInterval"></a>
-## parseInterval(an) ⇒ <code>Object</code> &#124; <code>false</code>
+## parseInterval(interval) ⇒ <code>Object</code> &#124; <code>false</code>
 parses an interval string or number and return its components in an object or
 false if the string or number is not valid
 
@@ -345,7 +346,7 @@ with the following properties:
 
 | Param | Type | Description |
 | --- | --- | --- |
-| an | <code>String</code> &#124; <code>Number</code> | interval string with interval quality or a number representing only interval size. Both types of input may be signed ('-P5' or -5) to indicate a descending interval. |
+| interval | <code>String</code> &#124; <code>Number</code> | an interval string with interval quality or a number representing only interval size. Both types of input may be signed ('-P5' or -5) to indicate a descending interval. |
 
 **Example**  
 ```js
