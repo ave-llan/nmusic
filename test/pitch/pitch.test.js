@@ -123,3 +123,18 @@ test('Pitch.intervalSize and Pitch.simpleIntervalSize', function (t) {
 
   t.end()
 })
+
+test('Pitch.interval and Pitch.simpleInterval', function (t) {
+  var pitch_C4 = new Pitch('C4')
+
+  t.equal(pitch_C4.interval(new Pitch('C4')), 'P1')
+  t.equal(pitch_C4.interval(new Pitch('C#5')), 'A8')
+  t.equal(pitch_C4.interval(new Pitch('Cb6')), 'd15')
+  t.equal(pitch_C4.interval(new Pitch('Bb4')), 'm7')
+  t.equal(pitch_C4.interval(new Pitch('B#3')), 'd2')
+  t.equal(pitch_C4.simpleInterval(new Pitch('C4')), 'P1')
+  t.equal(pitch_C4.simpleInterval(new Pitch('C8')), 'P1')
+  t.equal(pitch_C4.simpleInterval(new Pitch('Eb6')), 'm3')
+
+  t.end()
+})
