@@ -5,6 +5,9 @@
 </dl>
 ## Functions
 <dl>
+<dt><a href="#intervalQuality">intervalQuality(sciPitch1, sciPitch2)</a> ⇒ <code>String</code></dt>
+<dd><p>the interval quality between two pitch strings</p>
+</dd>
 <dt><a href="#intervalSize">intervalSize(sciPitch1, sciPitch2)</a> ⇒ <code>Number</code></dt>
 <dd><p>the generic interval size between two pitch strings, disregarding accidentals</p>
 </dd>
@@ -57,7 +60,7 @@ Creates a new immutable Pitch.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sciPitch | <code>string</code> | a pitch in scientific pitch notation |
+| sciPitch | <code>string</code> | a pitch string in scientific pitch notation |
 
 **Example**  
 ```js
@@ -169,6 +172,35 @@ toMidi('A#3')   => 58
 | --- | --- |
 | that | <code>[Pitch](#Pitch)</code> | 
 
+<a name="intervalQuality"></a>
+## intervalQuality(sciPitch1, sciPitch2) ⇒ <code>String</code>
+the interval quality between two pitch strings
+
+**Kind**: global function  
+**Returns**: <code>String</code> - a character representing the interval between the two pitches:
+-'P' = perfect
+-'m' = minor
+-'M' = major
+-'d' = diminished
+-'A' = augmented  
+**Throws**:
+
+- an error if either string is not a valid pitch
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| sciPitch1 | <code>String</code> | a pitch in scientific pitch notation. |
+| sciPitch2 | <code>String</code> | a pitch in scientific pitch notation. |
+
+**Example**  
+```js
+intervalQuality('C4', 'E4')    => 'M'
+intervalQuality('E4', 'Eb4')   => 'm'
+intervalQuality('C4', 'F4')    => 'P'
+intervalQuality('C4', 'F#4')   => 'A'
+intervalQuality('B3', 'Ab4')   => 'd'
+```
 <a name="intervalSize"></a>
 ## intervalSize(sciPitch1, sciPitch2) ⇒ <code>Number</code>
 the generic interval size between two pitch strings, disregarding accidentals
