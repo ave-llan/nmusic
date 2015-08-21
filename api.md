@@ -152,7 +152,7 @@ the generic interval size between two pitch strings, disregarding accidentals
 **Returns**: <code>Number</code> - the interval size between the two pitches.  
 **Throws**:
 
-- Will throw an error if string is not a valid pitch
+- an error if string is not a valid pitch
 
 
 | Param | Type | Description |
@@ -174,10 +174,10 @@ the generic simple interval size (1-7) between two pitch strings, disregarding a
 
 **Kind**: static method of <code>[intervalSize](#intervalSize)</code>  
 **Returns**: <code>Number</code> - the simple interval size between the two pitches in range [1, 7].
-n.b. contrary to standard practice, an octave is considered compound and reduces to 1.  
+Contrary to standard practice, an octave is considered compound and reduces to 1.  
 **Throws**:
 
-- Will throw an error if string is not a valid pitch
+- an error if string is not a valid pitch
 
 
 | Param | Type | Description |
