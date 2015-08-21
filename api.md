@@ -14,12 +14,19 @@
 <dt><a href="#interval">interval(sciPitch1, sciPitch2)</a> ⇒ <code>String</code></dt>
 <dd><p>the interval between two pitch strings</p>
 </dd>
+<dt><a href="#parseInterval">parseInterval(an)</a> ⇒ <code>Object</code> | <code>false</code></dt>
+<dd><p>parses an interval string or number and return its components in an object or
+false if the string or number is not valid</p>
+</dd>
 <dt><a href="#parsePitch">parsePitch(sciPitch)</a> ⇒ <code>object</code> | <code>false</code></dt>
 <dd><p>parses a pitch string and return its components in an object or
 false if the string is not valid</p>
 </dd>
 <dt><a href="#semitonesBetween">semitonesBetween(sciPitch1, sciPitch2)</a> ⇒ <code>Number</code></dt>
 <dd><p>the number of semitones between these two pitch strings</p>
+</dd>
+<dt><a href="#simplifyIntervalSize">simplifyIntervalSize(intervalSize)</a> ⇒ <code>Number</code></dt>
+<dd><p>simplify compound intervals to within the range of 1-7</p>
 </dd>
 <dt><a href="#toMidi">toMidi(sciPitch)</a> ⇒ <code>Number</code></dt>
 <dd><p>the <a href="http://newt.phys.unsw.edu.au/jw/notes.html">midi number</a> of this pitch string</p>
@@ -322,6 +329,30 @@ interval.simple('C4', 'E4')    => 'M3'
 interval.simple('C4', 'E5')    => 'M3'
 interval.simple('C1', 'E9')    => 'M3'
 ```
+<a name="parseInterval"></a>
+## parseInterval(an) ⇒ <code>Object</code> &#124; <code>false</code>
+parses an interval string or number and return its components in an object or
+false if the string or number is not valid
+
+**Kind**: global function  
+**Returns**: <code>Object</code> &#124; <code>false</code> - False if invalid interval else an object
+with the following properties:
+- interval: string
+- direction: number -1 or 1
+- quality: string of 'm', 'M', 'P', 'd', or 'A'
+- size: number, size of the interval, never negative
+- perfectable: boolean (if false, this is an imperfect interval)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| an | <code>String</code> &#124; <code>Number</code> | interval string with interval quality or a number representing only interval size. Both types of input may be signed ('-P5' or -5) to indicate a descending interval. |
+
+**Example**  
+```js
+parseInterval('-M6')  => {interval: '-M6', direction: -1, quality: 'M', size: 6, perfectable: false}
+parseInterval(12)     => {interval: '12', direction: 1, quality: null, size: 12, perfectable: true}
+parseInterval('M5')   => false
+```
 <a name="parsePitch"></a>
 ## parsePitch(sciPitch) ⇒ <code>object</code> &#124; <code>false</code>
 parses a pitch string and return its components in an object or
@@ -366,6 +397,28 @@ the number of semitones between these two pitch strings
 semitonesBetween('C4', 'Db4')   => 1
 semitonesBetween('C4', 'B#3')   => 0
 semitonesBetween('C4', 'C5')    => 12
+```
+<a name="simplifyIntervalSize"></a>
+## simplifyIntervalSize(intervalSize) ⇒ <code>Number</code>
+simplify compound intervals to within the range of 1-7
+
+**Kind**: global function  
+**Returns**: <code>Number</code> - the simplified interval  
+**Throws**:
+
+- Will throw an error if intervalSize is 0
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| intervalSize | <code>Number</code> | any valid interval number |
+
+**Example**  
+```js
+simplifyIntervalSize(10)   => 3
+simplifyIntervalSize(-12)  => -5
+simplifyIntervalSize(-4)   => -4
+simplifyIntervalSize(8)    => 1
 ```
 <a name="toMidi"></a>
 ## toMidi(sciPitch) ⇒ <code>Number</code>
