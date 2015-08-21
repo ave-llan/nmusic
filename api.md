@@ -5,6 +5,9 @@
 </dl>
 ## Functions
 <dl>
+<dt><a href="#intervalSize">intervalSize(sciPitch1, sciPitch2)</a> ⇒ <code>Number</code></dt>
+<dd><p>the generic interval size between two pitches, disregarding accidentals</p>
+</dd>
 <dt><a href="#parsePitch">parsePitch(sciPitch)</a> ⇒ <code>object</code> | <code>false</code></dt>
 <dd><p>Parse a pitch string and return its properties or
 false if the string is not valid</p>
@@ -143,6 +146,30 @@ toMidi('A#3')   => 58
 | --- | --- |
 | that | <code>[Pitch](#Pitch)</code> | 
 
+<a name="intervalSize"></a>
+## intervalSize(sciPitch1, sciPitch2) ⇒ <code>Number</code>
+the generic interval size between two pitches, disregarding accidentals
+
+**Kind**: global function  
+**Returns**: <code>Number</code> - the interval size between the two pitches.  
+**Throws**:
+
+- Will throw an error if string is not a valid pitch
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| sciPitch1 | <code>String</code> | a pitch in scientific pitch notation. |
+| sciPitch2 | <code>String</code> | a pitch in scientific pitch notation. |
+
+**Example**  
+```js
+intervalSize('C4', 'E4')    => 3
+intervalSize('E4', 'C4')    => 3
+intervalSize('C4', 'E5')    => 10
+intervalSize('C4', 'Eb5')   => 10
+intervalSize('C5', 'C5')    => 1
+```
 <a name="parsePitch"></a>
 ## parsePitch(sciPitch) ⇒ <code>object</code> &#124; <code>false</code>
 Parse a pitch string and return its properties or
