@@ -6,14 +6,14 @@
 ## Functions
 <dl>
 <dt><a href="#intervalSize">intervalSize(sciPitch1, sciPitch2)</a> ⇒ <code>Number</code></dt>
-<dd><p>the generic interval size between two pitches, disregarding accidentals</p>
+<dd><p>the generic interval size between two pitch strings, disregarding accidentals</p>
 </dd>
 <dt><a href="#parsePitch">parsePitch(sciPitch)</a> ⇒ <code>object</code> | <code>false</code></dt>
 <dd><p>Parse a pitch string and return its properties or
 false if the string is not valid</p>
 </dd>
 <dt><a href="#toMidi">toMidi(sciPitch)</a> ⇒ <code>Number</code></dt>
-<dd><p>What is the <a href="http://newt.phys.unsw.edu.au/jw/notes.html">midi number</a> of this pitch?
+<dd><p>The <a href="http://newt.phys.unsw.edu.au/jw/notes.html">midi number</a> of this pitch string
 <a href="https://en.wikipedia.org/wiki/Enharmonic">Enharmonic</a> notes will return the same
 midi number.</p>
 </dd>
@@ -148,7 +148,7 @@ toMidi('A#3')   => 58
 
 <a name="intervalSize"></a>
 ## intervalSize(sciPitch1, sciPitch2) ⇒ <code>Number</code>
-the generic interval size between two pitches, disregarding accidentals
+the generic interval size between two pitch strings, disregarding accidentals
 
 **Kind**: global function  
 **Returns**: <code>Number</code> - the interval size between the two pitches.  
@@ -195,7 +195,7 @@ parsePitch('Xb4')   => false
 ```
 <a name="toMidi"></a>
 ## toMidi(sciPitch) ⇒ <code>Number</code>
-What is the [midi number](http://newt.phys.unsw.edu.au/jw/notes.html) of this pitch?
+The [midi number](http://newt.phys.unsw.edu.au/jw/notes.html) of this pitch string
 [Enharmonic](https://en.wikipedia.org/wiki/Enharmonic) notes will return the same
 midi number.
 
