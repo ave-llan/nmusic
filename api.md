@@ -28,6 +28,7 @@ midi number.</p>
 * [Pitch](#Pitch)
   * [new Pitch(sciPitch)](#new_Pitch_new)
   * [.toString()](#Pitch+toString) ⇒ <code>String</code>
+  * [.valueOf()](#Pitch+valueOf) ⇒ <code>Number</code>
   * [.sciPitch()](#Pitch+sciPitch) ⇒ <code>String</code>
   * [.letter()](#Pitch+letter) ⇒ <code>String</code>
   * [.accidental()](#Pitch+accidental) ⇒ <code>String</code>
@@ -58,11 +59,16 @@ p.name => 'Bb3'
 ### pitch.toString() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
 **Returns**: <code>String</code> - string in scientfic pitch notation  
+<a name="Pitch+valueOf"></a>
+### pitch.valueOf() ⇒ <code>Number</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Number</code> - the midi number of this pitch, so enharmonic notes will be equal  
+**See**: [pitch.midi()](#Pitch+midi)  
 <a name="Pitch+sciPitch"></a>
 ### pitch.sciPitch() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
 **Returns**: <code>String</code> - in [scientfic pitch notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation)
-(same as Pitch.name)  
+(same as pitch.name)  
 <a name="Pitch+letter"></a>
 ### pitch.letter() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
@@ -81,7 +87,7 @@ or '', the empty string if there is no accidental.
 ### pitch.pitchClass() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
 **Returns**: <code>String</code> - the [pitch class](https://en.wikipedia.org/wiki/Pitch_class),
-same as [Pitch.sciPitch()](#Pitch+sciPitch) but without octave number.  
+same as [pitch.sciPitch()](#Pitch+sciPitch) but without octave number.  
 <a name="Pitch+numAccidental"></a>
 ### pitch.numAccidental() ⇒ <code>Number</code>
 returns the number of accidentals on this letter:
