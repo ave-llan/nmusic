@@ -38,7 +38,7 @@ midi number.</p>
   * [.pitchClass()](#Pitch+pitchClass) ⇒ <code>String</code>
   * [.numAccidental()](#Pitch+numAccidental) ⇒ <code>Number</code>
   * [.midi()](#Pitch+midi) ⇒ <code>Number</code>
-  * [.semitonesTo(that)](#Pitch+semitonesTo) ⇒ <code>Boolean</code>
+  * [.semitonesTo(that)](#Pitch+semitonesTo) ⇒ <code>Number</code>
 
 <a name="new_Pitch_new"></a>
 ### new Pitch(sciPitch)
@@ -135,9 +135,9 @@ toMidi('Bb3')   => 58
 toMidi('A#3')   => 58
 ```
 <a name="Pitch+semitonesTo"></a>
-### pitch.semitonesTo(that) ⇒ <code>Boolean</code>
+### pitch.semitonesTo(that) ⇒ <code>Number</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
-**Returns**: <code>Boolean</code> - how many half steps are there between these pitches?  
+**Returns**: <code>Number</code> - how many half steps are there between these pitches?  
 
 | Param | Type |
 | --- | --- |
