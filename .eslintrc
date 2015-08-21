@@ -13,6 +13,7 @@
     }],
     "no-undef": [2],
     "no-use-before-define": [2],
+    "indent": [2, 2],
     "curly": [0],
     "no-alert": [0],
     "new-cap": [0],
