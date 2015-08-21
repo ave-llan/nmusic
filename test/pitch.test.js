@@ -36,6 +36,7 @@ test('Pitch prototype parsing methods', function (t) {
   t.equal(pitch_Bbb2.accidental(), 'bb', 'Pitch.accidental() returns correctly')
   t.equal(pitch_Bbb2.octave(), 2, 'Pitch.octave() returns correctly')
   t.equal(pitch_Bbb2.pitchClass(), 'Bbb', 'Pitch.pitchClass() returns correctly')
+  t.equal(pitch_Bbb2.midi(), 45, 'Pitch.midi() returns correctly')
 
   var pitch_D = new Pitch('D')
   t.equal(pitch_D.accidental(), '', 'Pitch.accidental() returns correctly with empty string')
