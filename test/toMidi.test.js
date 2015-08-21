@@ -1,10 +1,7 @@
 var test = require('tape')
 var toMidi = require('../lib/toMidi.js')
 
-
-test('toMidi returns the correct number', function(t) {
-
-
+test('toMidi returns the correct number', function (t) {
   t.equal(toMidi('C4'), 60)
   t.equal(toMidi('B#3'), 60)
   t.equal(toMidi('Cb4'), 59)

@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "eslint --no-eslintrc -c .eslintrc lib/*.js && tape test/*.test.js",
+    "test": "standard && tape test/*.test.js",
     "docs": "jsdoc2md lib/*.js > api.md"
   },
   "repository": {
@@ -33,8 +33,8 @@
   },
   "homepage": "https://github.com/jrleszcz/nmusic#readme",
   "devDependencies": {
-    "eslint": "^1.2.0",
     "jsdoc-to-markdown": "^1.1.1",
+    "standard": "^5.1.0",
     "tape": "^4.2.0"
   }
 }
