@@ -154,6 +154,7 @@ the generic interval size between two pitch strings, disregarding accidentals
 
 - an error if string is not a valid pitch
 
+**See**: [simple](#intervalSize.simple) for returning the simple interval size  
 
 | Param | Type | Description |
 | --- | --- | --- |
