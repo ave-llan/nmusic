@@ -13,9 +13,7 @@
 false if the string is not valid</p>
 </dd>
 <dt><a href="#toMidi">toMidi(sciPitch)</a> ⇒ <code>Number</code></dt>
-<dd><p>the <a href="http://newt.phys.unsw.edu.au/jw/notes.html">midi number</a> of this pitch string
-<a href="https://en.wikipedia.org/wiki/Enharmonic">Enharmonic</a> notes will return the same
-midi number.</p>
+<dd><p>the <a href="http://newt.phys.unsw.edu.au/jw/notes.html">midi number</a> of this pitch string</p>
 </dd>
 </dl>
 <a name="Pitch"></a>
@@ -196,11 +194,11 @@ parsePitch('Xb4')   => false
 <a name="toMidi"></a>
 ## toMidi(sciPitch) ⇒ <code>Number</code>
 the [midi number](http://newt.phys.unsw.edu.au/jw/notes.html) of this pitch string
-[Enharmonic](https://en.wikipedia.org/wiki/Enharmonic) notes will return the same
-midi number.
 
 **Kind**: global function  
-**Returns**: <code>Number</code> - the midi number for this pitch. C4 is 60.  
+**Returns**: <code>Number</code> - the midi number for this pitch. C4 is 60.
+[Enharmonic](https://en.wikipedia.org/wiki/Enharmonic) notes will return the same
+midi number.  
 **Throws**:
 
 - Will throw an error if string is not a valid pitch
