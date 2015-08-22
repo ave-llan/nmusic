@@ -16,7 +16,7 @@
 </dd>
 <dt><a href="#parseInterval">parseInterval(interval)</a> ⇒ <code>Object</code> | <code>false</code></dt>
 <dd><p>parses an interval string or number and return its components in an object or
-false if the string or number is not valid</p>
+return false if the string or number is not valid</p>
 </dd>
 <dt><a href="#parsePitch">parsePitch(sciPitch)</a> ⇒ <code>object</code> | <code>false</code></dt>
 <dd><p>parses a pitch string and return its components in an object or
@@ -334,14 +334,14 @@ interval.simple('C1', 'E9')    => 'M3'
 <a name="parseInterval"></a>
 ## parseInterval(interval) ⇒ <code>Object</code> &#124; <code>false</code>
 parses an interval string or number and return its components in an object or
-false if the string or number is not valid
+return false if the string or number is not valid
 
 **Kind**: global function  
 **Returns**: <code>Object</code> &#124; <code>false</code> - False if invalid interval else an object
 with the following properties:
 - interval: string
 - direction: number -1 or 1
-- quality: string of 'm', 'M', 'P', 'd', or 'A'
+- quality: string of 'm', 'M', 'P', 'd', or 'A' OR null if not given
 - size: number, size of the interval, never negative
 - perfectable: boolean (if false, this is an imperfect interval)  
 
