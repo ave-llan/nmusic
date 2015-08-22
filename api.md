@@ -22,6 +22,9 @@ return false if the string or number is not valid</p>
 <dd><p>parses a pitch string and return its components in an object or
 false if the string is not valid</p>
 </dd>
+<dt><a href="#plusInterval">plusInterval(sciPitch, interval)</a> ⇒ <code>String</code></dt>
+<dd><p>starting pitch plus interval equals new pitch</p>
+</dd>
 <dt><a href="#semitonesBetween">semitonesBetween(sciPitch1, sciPitch2)</a> ⇒ <code>Number</code></dt>
 <dd><p>the number of semitones between these two pitch strings</p>
 </dd>
@@ -379,6 +382,26 @@ with the following properties:
 ```js
 parsePitch('Bb3')   => {letter: 'B', accidental: 'b', numAccidental: -1, octave: 3, sciPitch:'Bb3'}
 parsePitch('Xb4')   => false
+```
+<a name="plusInterval"></a>
+## plusInterval(sciPitch, interval) ⇒ <code>String</code>
+starting pitch plus interval equals new pitch
+
+**Kind**: global function  
+**Returns**: <code>String</code> - the resulting pitch string  
+**Throws**:
+
+- an error if pitch string or interval string is not valid
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| sciPitch | <code>String</code> | a pitch in scientific pitch notation. |
+| interval | <code>String</code> &#124; <code>Number</code> | an interval string or number. |
+
+**Example**  
+```js
+plusInterval('C4', 10)    => 'E5'
 ```
 <a name="semitonesBetween"></a>
 ## semitonesBetween(sciPitch1, sciPitch2) ⇒ <code>Number</code>
