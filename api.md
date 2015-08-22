@@ -343,7 +343,9 @@ with the following properties:
 - direction: number -1 or 1
 - quality: string of 'm', 'M', 'P', 'd', or 'A' OR null if not given
 - size: number, size of the interval, never negative
-- perfectable: boolean (if false, this is an imperfect interval)  
+- perfectable: boolean (if false, this is an imperfect interval)
+- simpleSize: number in range [1,7]
+- octaves: number of octave changes. Will be >= 0.  
 
 | Param | Type | Description |
 | --- | --- | --- |
