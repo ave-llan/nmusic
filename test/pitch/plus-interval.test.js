@@ -46,6 +46,10 @@ test('plusInterval works for postivie intervals with quality', function (t) {
   t.equal(plusInterval('Bb3', 'A1'), 'B3')
   t.equal(plusInterval('Bb3', 'd1'), 'Bbb3') // this is a strange case, but is the expected output
 
+  t.equal(plusInterval('D#3', 'P1'), 'D#3')
+  t.equal(plusInterval('D#3', 'A1'), 'D##3')
+  t.equal(plusInterval('D#3', 'd1'), 'D3')
+
   t.equal(plusInterval('G#4', 'd2'), 'Ab4')
   t.equal(plusInterval('G#4', 'm2'), 'A4')
   t.equal(plusInterval('G#4', 'M2'), 'A#4')
@@ -91,10 +95,13 @@ test('plusInterval works for postivie intervals with quality', function (t) {
 })
 
 test('plusInterval works for negative intervals with quality', function (t) {
-  // BUGBUG subtracting by 1s does not work if the starting note has an accidental
-  // t.equal(plusInterval('Bb3', '-P1'), 'Bb3')
-  // t.equal(plusInterval('Bb3', '-A1'), 'Bbb3')   // this is a strange case, but the expected output
-  // t.equal(plusInterval('Bb3', '-d1'), 'B3') // this is a very strange case, but the expected output
+  t.equal(plusInterval('Bb3', '-P1'), 'Bb3')
+  t.equal(plusInterval('Bb3', '-A1'), 'Bbb3')
+  t.equal(plusInterval('Bb3', '-d1'), 'B3')
+
+  t.equal(plusInterval('D#3', '-P1'), 'D#3')
+  t.equal(plusInterval('D#3', '-A1'), 'D3')
+  t.equal(plusInterval('D#3', '-d1'), 'D##3')
 
   t.equal(plusInterval('G4', '-d2'), 'F##4')
   t.equal(plusInterval('G4', '-m2'), 'F#4')
