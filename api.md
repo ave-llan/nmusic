@@ -407,7 +407,7 @@ given pitch string plus given interval string equals new pitch string
 plusInterval('C4', 10)     => 'E5'
 plusInterval('C4', -10)    => 'A2'
 plusInterval('C4', 'm10')  => 'Eb5'
-plusInterval('C4', '-m10') =>
+plusInterval('C4', '-d7')  => 'D#3'
 ```
 <a name="semitonesBetween"></a>
 ## semitonesBetween(sciPitch1, sciPitch2) ⇒ <code>Number</code>
