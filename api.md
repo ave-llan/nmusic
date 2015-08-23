@@ -23,7 +23,7 @@ return false if the string or number is not valid</p>
 false if the string is not valid</p>
 </dd>
 <dt><a href="#plusInterval">plusInterval(sciPitch, interval)</a> ⇒ <code>String</code></dt>
-<dd><p>starting pitch plus interval equals new pitch</p>
+<dd><p>given pitch string plus given interval string equals new pitch string</p>
 </dd>
 <dt><a href="#semitonesBetween">semitonesBetween(sciPitch1, sciPitch2)</a> ⇒ <code>Number</code></dt>
 <dd><p>the number of semitones between these two pitch strings</p>
@@ -388,10 +388,10 @@ parsePitch('Xb4')   => false
 ```
 <a name="plusInterval"></a>
 ## plusInterval(sciPitch, interval) ⇒ <code>String</code>
-starting pitch plus interval equals new pitch
+given pitch string plus given interval string equals new pitch string
 
 **Kind**: global function  
-**Returns**: <code>String</code> - the resulting pitch string  
+**Returns**: <code>String</code> - the resulting pitch string.  
 **Throws**:
 
 - an error if pitch string or interval string is not valid
@@ -400,7 +400,7 @@ starting pitch plus interval equals new pitch
 | Param | Type | Description |
 | --- | --- | --- |
 | sciPitch | <code>String</code> | a pitch in scientific pitch notation. |
-| interval | <code>String</code> &#124; <code>Number</code> | an interval string or number. |
+| interval | <code>String</code> &#124; <code>Number</code> | an interval string or number with or without quality. If quality                                   is not provided, accidentals on given pitch will be ignored. |
 
 **Example**  
 ```js
