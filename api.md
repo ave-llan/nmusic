@@ -15,7 +15,7 @@
 <dd><p>the interval between two pitch strings</p>
 </dd>
 <dt><a href="#parseInterval">parseInterval(interval)</a> ⇒ <code>Object</code> | <code>false</code></dt>
-<dd><p>parses an interval string or number and return its components in an object or
+<dd><p>parses an interval string or number and return its properties in an object or
 return false if the string or number is not valid</p>
 </dd>
 <dt><a href="#parsePitch">parsePitch(sciPitch)</a> ⇒ <code>object</code> | <code>false</code></dt>
@@ -336,7 +336,7 @@ interval.simple('C1', 'E9')    => 'M3'
 ```
 <a name="parseInterval"></a>
 ## parseInterval(interval) ⇒ <code>Object</code> &#124; <code>false</code>
-parses an interval string or number and return its components in an object or
+parses an interval string or number and return its properties in an object or
 return false if the string or number is not valid
 
 **Kind**: global function  
@@ -346,9 +346,10 @@ with the following properties:
 - direction: number -1 or 1
 - quality: string of 'm', 'M', 'P', 'd', or 'A' OR null if not given
 - size: number, size of the interval, never negative
-- perfectable: boolean (if false, this is an imperfect interval)
 - simpleSize: number in range [1,7]
-- octaves: number of octave changes. Will be >= 0.  
+- perfectable: boolean (if false, this is an imperfect interval)
+- octaves: number of octave changes. Will be >= 0.
+- halfsteps: number|undefined if given quality, number of halfsteps this interval translates to  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -356,8 +357,10 @@ with the following properties:
 
 **Example**  
 ```js
-parseInterval('-M6')  => {interval: '-M6', direction: -1, quality: 'M', size: 6, perfectable: false}
-parseInterval(12)     => {interval: '12', direction: 1, quality: null, size: 12, perfectable: true}
+parseInterval('-M6')  => {interval: '-M6', direction: -1, quality: 'M', size: 6, simpleSize: 6,
+                          perfectable: false, octaves: 0, halfsteps: 9}
+parseInterval(12)     => {interval: '12', direction: 1, quality: null, size: 12, simpleSize: 5,
+                          perfectable: true, octaves 1}
 parseInterval('M5')   => false
 ```
 <a name="parsePitch"></a>
@@ -402,6 +405,7 @@ starting pitch plus interval equals new pitch
 **Example**  
 ```js
 plusInterval('C4', 10)    => 'E5'
+plusInterval('C4', -10)   => 'A2'
 ```
 <a name="semitonesBetween"></a>
 ## semitonesBetween(sciPitch1, sciPitch2) ⇒ <code>Number</code>

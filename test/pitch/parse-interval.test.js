@@ -10,7 +10,8 @@ test('interval parsing works for notes without accidentals', function (t) {
       size: 6,
       perfectable: false,
       simpleSize: 6,
-      octaves: 0
+      octaves: 0,
+      halfsteps: 9
     })
 
   t.deepEqual(parseInterval('-P5'),
@@ -21,7 +22,8 @@ test('interval parsing works for notes without accidentals', function (t) {
       size: 5,
       perfectable: true,
       simpleSize: 5,
-      octaves: 0
+      octaves: 0,
+      halfsteps: 7
     })
 
   t.deepEqual(parseInterval(10),
@@ -44,6 +46,39 @@ test('interval parsing works for notes without accidentals', function (t) {
       perfectable: true,
       simpleSize: 4,
       octaves: 2
+    })
+
+  t.deepEqual(parseInterval('A1'),
+    { interval: 'A1',
+      direction: 1,
+      quality: 'A',
+      size: 1,
+      perfectable: true,
+      simpleSize: 1,
+      octaves: 0,
+      halfsteps: 1
+    })
+
+  t.deepEqual(parseInterval('-d9'),
+    { interval: '-d9',
+      direction: -1,
+      quality: 'd',
+      size: 9,
+      perfectable: false,
+      simpleSize: 2,
+      octaves: 1,
+      halfsteps: 12
+    })
+
+  t.deepEqual(parseInterval('d15'),
+    { interval: 'd15',
+      direction: 1,
+      quality: 'd',
+      size: 15,
+      simpleSize: 1,
+      perfectable: true,
+      octaves: 2,
+      halfsteps: 23
     })
 
   t.end()
