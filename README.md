@@ -1,4 +1,4 @@
-nmusic is a JavaScript music library for programmatic music composition which offers an intuitive mix of a functional and object-oriented programming styles.  It is thoroughly tested and well [documented](api.md).
+nmusic is a JavaScript music library for programmatic music composition which offers an intuitive mix of functional and object-oriented programming styles.  It is thoroughly tested and well [documented](api.md).
 
 ## Usage
 
