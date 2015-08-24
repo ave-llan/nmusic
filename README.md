@@ -1,4 +1,4 @@
-nmusic is a JavaScript music library for programmatic music composition which offers an intuitive mix of a functional and object-oriented programming style.  It is thoroughly tested and well [documented](api.md).
+nmusic is a JavaScript music library for programmatic music composition which offers an intuitive mix of a functional and object-oriented programming styles.  It is thoroughly tested and well [documented](api.md).
 
 ## Usage
 
@@ -11,7 +11,7 @@ plusInterval('B3', -6)          =>  'D3'
 plusInterval('B3', '-m6')       =>  'D#3'
 ```
 
-To work in an object-oriented style, create Pitch objects. The Pitch methods will return other Pitch objects, but behind the scenes they are just using the above functional methods above.
+To work in an object-oriented style, create Pitch objects. The Pitch methods will return other Pitch objects, but behind the scenes they are just using the same functional methods introduced above.
 
 ```
 var p1 = new Pitch('Bb3')
@@ -51,7 +51,7 @@ To generate api documentation:
 npm run docs
 ```
 
-### Background & Credits
+## Background & Credits
 
  My first programming project was a simple object oriented music library which I made from scratch to solve [counterpoint problems](https://github.com/jrleszcz/Computational-Counterpoint). As I've learned more, I've come back to that library and refactored it several times, and now I aim to completely rebuild it.
 
