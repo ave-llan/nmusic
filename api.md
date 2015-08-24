@@ -68,7 +68,7 @@ negative intervals as well.</p>
 
 <a name="new_Pitch_new"></a>
 ### new Pitch(sciPitch)
-Creates a new immutable Pitch.
+Creates a new immutable Pitch or if given an existing Pitch, returns it.
 
 **Throws**:
 
@@ -77,12 +77,19 @@ Creates a new immutable Pitch.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sciPitch | <code>string</code> | a pitch string in scientific pitch notation |
+| sciPitch | <code>string</code> &#124; <code>[Pitch](#Pitch)</code> | a pitch string in scientific pitch notation or a Pitch. |
 
 **Example**  
 ```js
 var p = new Pitch('Bb3')
-p.name => 'Bb3'
+p.name               => 'Bb3'
+// if you forget the 'new' keyword, the constructor will call it for you
+var p2 = Pitch('C4')
+p2 instanceof Pitch  => true
+// if given a Pitch as its argument, the same Pitch will be returned
+var p3 = Pitch(p2)
+p2 === p3            => true
+// this can be used to write functions which accept pitch strings or Pitches as a parameter
 ```
 <a name="Pitch+toString"></a>
 ### pitch.toString() ⇒ <code>String</code>
