@@ -217,8 +217,16 @@ toMidi('A#3')   => 58
 
 | Param | Type | Description |
 | --- | --- | --- |
-| interval | <code>String</code> | an interval string |
+| interval | <code>String</code> &#124; <code>Number</code> | an interval string or number with or without quality. If   interval quality is not provided, accidentals on this Pitch will be ignored. |
 
+**Example**  
+```js
+var pitch_C4 = new Pitch('C4')
+plusInterval(pitch_C4, 10)     => Pitch: E5
+plusInterval(pitch_C4, -10)    => Pitch: A2
+plusInterval(pitch_C4, 'm10')  => Pitch: Eb5
+plusInterval(pitch_C4, '-d7')  => Pitch: D#3
+```
 <a name="intervalQuality"></a>
 ## intervalQuality(sciPitch1, sciPitch2) ⇒ <code>String</code>
 the interval quality between two pitch strings
