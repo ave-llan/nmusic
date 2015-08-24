@@ -65,6 +65,11 @@ test('Pitch.equals() returns true only if notes spelled the same', function (t) 
   t.notOk(pitch_C4.equals(new Pitch('B#3')))
   t.notOk(pitch_Bb3.equals(new Pitch('A3')))
 
+  t.ok(pitch_C4.equals('C4'))
+  t.ok(pitch_Bb3.equals('Bb3'))
+  t.notOk(pitch_C4.equals('B#3'))
+  t.notOk(pitch_Bb3.equals('A3'))
+
   t.end()
 })
 
@@ -73,8 +78,11 @@ test('Pitch.isEnharmonic()', function (t) {
   var pitch_Bb3 = new Pitch('Bb3')
 
   t.ok(pitch_C4.isEnharmonic(new Pitch('C4')))
+  t.ok(pitch_C4.isEnharmonic('C4'))
   t.ok(pitch_C4.isEnharmonic(new Pitch('B#3')))
+  t.ok(pitch_C4.isEnharmonic('B#3'))
   t.ok(pitch_C4.isEnharmonic(new Pitch('Dbb4')))
+  t.ok(pitch_C4.isEnharmonic('Dbb4'))
 
   t.ok(pitch_Bb3.isEnharmonic(new Pitch('Bb3')))
   t.ok(pitch_Bb3.isEnharmonic(new Pitch('A#3')))
@@ -106,6 +114,11 @@ test('Pitch.semitonesTo()', function (t) {
   t.equal(pitch_Bb3.semitonesTo(new Pitch('C5')), 14)
   t.equal(pitch_Bb3.semitonesTo(new Pitch('E5')), 18)
 
+  t.equal(pitch_Bb3.semitonesTo('Bb3'), 0)
+  t.equal(pitch_Bb3.semitonesTo('A#3'), 0)
+  t.equal(pitch_Bb3.semitonesTo('C5'), 14)
+  t.equal(pitch_Bb3.semitonesTo('E5'), 18)
+
   t.end()
 })
 
@@ -121,6 +134,9 @@ test('Pitch.intervalSize and Pitch.simpleIntervalSize', function (t) {
   t.equal(pitch_C4.simpleIntervalSize(new Pitch('C8')), 1)
   t.equal(pitch_C4.simpleIntervalSize(new Pitch('Eb6')), 3)
 
+  t.equal(pitch_C4.intervalSize('B#3'), 2)
+  t.equal(pitch_C4.simpleIntervalSize('C4'), 1)
+
   t.end()
 })
 
@@ -135,6 +151,9 @@ test('Pitch.interval and Pitch.simpleInterval', function (t) {
   t.equal(pitch_C4.simpleInterval(new Pitch('C4')), 'P1')
   t.equal(pitch_C4.simpleInterval(new Pitch('C8')), 'P1')
   t.equal(pitch_C4.simpleInterval(new Pitch('Eb6')), 'm3')
+
+  t.equal(pitch_C4.interval('B#3'), 'd2')
+  t.equal(pitch_C4.simpleInterval('C4'), 'P1')
 
   t.end()
 })
