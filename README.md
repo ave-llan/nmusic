@@ -8,7 +8,7 @@ Navigate to your project directory and install nmusic:
 npm install nmusic
 ```
 
-In your project file, import nmusic. If you'd like, create global variables for the functions you will be using, or call all methods directly from `nmusic`.
+In your project file, import nmusic.
 ```js
 var nmusic = require('nmusic')
 
