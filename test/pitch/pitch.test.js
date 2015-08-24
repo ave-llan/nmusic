@@ -138,3 +138,14 @@ test('Pitch.interval and Pitch.simpleInterval', function (t) {
 
   t.end()
 })
+
+test('Pitch.plusInterval', function (t) {
+  var pitch_C4 = new Pitch('C4')
+
+  t.deepEqual(pitch_C4.plusInterval('m2'), new Pitch('Db4'))
+  t.deepEqual(pitch_C4.plusInterval('-m2'), new Pitch('B3'))
+  t.deepEqual(pitch_C4.plusInterval(3), new Pitch('E4'))
+  t.deepEqual(pitch_C4.plusInterval(-6), new Pitch('E3'))
+
+  t.end()
+})

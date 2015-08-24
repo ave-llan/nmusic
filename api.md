@@ -64,6 +64,7 @@ negative intervals as well.</p>
   * [.simpleIntervalSize(that)](#Pitch+simpleIntervalSize) ⇒ <code>Number</code>
   * [.interval(that)](#Pitch+interval) ⇒ <code>String</code>
   * [.simpleInterval(that)](#Pitch+simpleInterval) ⇒ <code>String</code>
+  * [.plusInterval(interval)](#Pitch+plusInterval) ⇒ <code>[Pitch](#Pitch)</code>
 
 <a name="new_Pitch_new"></a>
 ### new Pitch(sciPitch)
@@ -207,6 +208,16 @@ toMidi('A#3')   => 58
 | Param | Type |
 | --- | --- |
 | that | <code>[Pitch](#Pitch)</code> | 
+
+<a name="Pitch+plusInterval"></a>
+### pitch.plusInterval(interval) ⇒ <code>[Pitch](#Pitch)</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>[Pitch](#Pitch)</code> - the resulting Pitch  
+**See**: [plusInterval](#plusInterval)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| interval | <code>String</code> | an interval string |
 
 <a name="intervalQuality"></a>
 ## intervalQuality(sciPitch1, sciPitch2) ⇒ <code>String</code>
