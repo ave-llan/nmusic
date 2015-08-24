@@ -105,18 +105,18 @@ p2 === p3            => true
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
 **Returns**: <code>Boolean</code> - is this pitch spelled the same as that pitch?  
 
-| Param | Type |
-| --- | --- |
-| that | <code>[Pitch](#Pitch)</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
 
 <a name="Pitch+isEnharmonic"></a>
 ### pitch.isEnharmonic(that) ⇒ <code>Boolean</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
 **Returns**: <code>Boolean</code> - does this pitch sound identical to that pitch?  
 
-| Param | Type |
-| --- | --- |
-| that | <code>[Pitch](#Pitch)</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
 
 <a name="Pitch+sciPitch"></a>
 ### pitch.sciPitch() ⇒ <code>String</code>
@@ -172,9 +172,9 @@ toMidi('A#3')   => 58
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
 **Returns**: <code>Number</code> - how many half steps are there between these pitches?  
 
-| Param | Type |
-| --- | --- |
-| that | <code>[Pitch](#Pitch)</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
 
 <a name="Pitch+intervalSize"></a>
 ### pitch.intervalSize(that) ⇒ <code>Number</code>
@@ -182,9 +182,9 @@ toMidi('A#3')   => 58
 **Returns**: <code>Number</code> - the interval size between these pitches  
 **See**: [intervalSize](#intervalSize)  
 
-| Param | Type |
-| --- | --- |
-| that | <code>[Pitch](#Pitch)</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
 
 <a name="Pitch+simpleIntervalSize"></a>
 ### pitch.simpleIntervalSize(that) ⇒ <code>Number</code>
@@ -192,9 +192,9 @@ toMidi('A#3')   => 58
 **Returns**: <code>Number</code> - the simple interval size between these pitches in range [1,7]  
 **See**: [simple](#intervalSize.simple)  
 
-| Param | Type |
-| --- | --- |
-| that | <code>[Pitch](#Pitch)</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
 
 <a name="Pitch+interval"></a>
 ### pitch.interval(that) ⇒ <code>String</code>
@@ -202,9 +202,9 @@ toMidi('A#3')   => 58
 **Returns**: <code>String</code> - the interval between these pitches  
 **See**: [interval](#interval)  
 
-| Param | Type |
-| --- | --- |
-| that | <code>[Pitch](#Pitch)</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
 
 <a name="Pitch+simpleInterval"></a>
 ### pitch.simpleInterval(that) ⇒ <code>String</code>
@@ -212,9 +212,9 @@ toMidi('A#3')   => 58
 **Returns**: <code>String</code> - the simple interval between these pitches  
 **See**: [simple](#interval.simple)  
 
-| Param | Type |
-| --- | --- |
-| that | <code>[Pitch](#Pitch)</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
 
 <a name="Pitch+plusInterval"></a>
 ### pitch.plusInterval(interval) ⇒ <code>[Pitch](#Pitch)</code>
