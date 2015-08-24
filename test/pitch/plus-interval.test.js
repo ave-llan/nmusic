@@ -146,3 +146,13 @@ test('plusInterval works for negative intervals with quality', function (t) {
 
   t.end()
 })
+
+test('plusInterval throws an error when given bad input', function (t) {
+  t.throws(function () {plusInterval()}, Error)
+  t.throws(function () {plusInterval('', '')}, Error)
+  t.throws(function () {plusInterval('C4', 'C4')}, Error)
+  t.throws(function () {plusInterval('M3', 'M3')}, Error)
+  t.throws(function () {plusInterval('C4', 'P6')}, Error)
+
+  t.end()
+})
