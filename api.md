@@ -22,8 +22,10 @@ return false if the string or number is not valid</p>
 <dd><p>parses a pitch string and return its components in an object or
 false if the string is not valid</p>
 </dd>
-<dt><a href="#plusInterval">plusInterval(sciPitch, interval)</a> ⇒ <code>String</code></dt>
+<dt><a href="#plusInterval">plusInterval(sciPitch, interval)</a> ⇒ <code>String</code> | <code>function</code></dt>
 <dd><p>given pitch string plus given interval string equals new pitch string</p>
+<p>Optionally, give only one parameter and get back a function with that parameter
+set as the default.</p>
 </dd>
 <dt><a href="#semitonesBetween">semitonesBetween(sciPitch1, sciPitch2)</a> ⇒ <code>Number</code></dt>
 <dd><p>the number of semitones between these two pitch strings</p>
@@ -413,11 +415,15 @@ parsePitch('Bb3')   => {letter: 'B', accidental: 'b', numAccidental: -1, octave:
 parsePitch('Xb4')   => false
 ```
 <a name="plusInterval"></a>
-## plusInterval(sciPitch, interval) ⇒ <code>String</code>
+## plusInterval(sciPitch, interval) ⇒ <code>String</code> &#124; <code>function</code>
 given pitch string plus given interval string equals new pitch string
 
+Optionally, give only one parameter and get back a function with that parameter
+set as the default.
+
 **Kind**: global function  
-**Returns**: <code>String</code> - the resulting pitch string.  
+**Returns**: <code>String</code> &#124; <code>function</code> - the resulting pitch string, or if given only one argument, returns
+a function with the given argument set as a default.  
 **Throws**:
 
 - an error if pitch string or interval string is not valid
@@ -434,6 +440,9 @@ plusInterval('C4', 10)     => 'E5'
 plusInterval('C4', -10)    => 'A2'
 plusInterval('C4', 'm10')  => 'Eb5'
 plusInterval('C4', '-d7')  => 'D#3'
+var majorscale = ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'M7', 'P8']
+majorscale.map(plusInterval('Eb4'))
+=> ['Eb4', 'F4', 'G4', 'Ab4', 'Bb4', 'C5', 'D5', 'Eb5']
 ```
 <a name="semitonesBetween"></a>
 ## semitonesBetween(sciPitch1, sciPitch2) ⇒ <code>Number</code>
