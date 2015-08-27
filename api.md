@@ -443,6 +443,8 @@ plusInterval('C4', '-d7')  => 'D#3'
 var majorscale = ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'M7', 'P8']
 majorscale.map(plusInterval('Eb4'))
 => ['Eb4', 'F4', 'G4', 'Ab4', 'Bb4', 'C5', 'D5', 'Eb5']
+majorscale.map(plusInterval('Eb4')).map(plusInterval('-m9'))
+=> ['D3', 'E3', 'F#3', 'G3', 'A3', 'B3', 'C#4', 'D4']
 ```
 <a name="semitonesBetween"></a>
 ## semitonesBetween(sciPitch1, sciPitch2) ⇒ <code>Number</code>
