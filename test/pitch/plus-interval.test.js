@@ -156,3 +156,14 @@ test('plusInterval throws an error when given bad input', function (t) {
 
   t.end()
 })
+
+test('plusInterval returns working function when given only one arg', function (t) {
+  var majorscale = ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'M7', 'P8']
+
+  t.deepEqual(majorscale.map(plusInterval('Eb4')),
+    ['Eb4', 'F4', 'G4', 'Ab4', 'Bb4', 'C5', 'D5', 'Eb5'])
+  t.deepEqual(majorscale.map(plusInterval('D3')),
+    ['D3', 'E3', 'F#3', 'G3', 'A3', 'B3', 'C#4', 'D4'])
+
+  t.end()
+})
