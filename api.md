@@ -281,7 +281,7 @@ interval each scale degree is from tonic, always starting with 'P1' for tonic
 
 | Param | Type | Description |
 | --- | --- | --- |
-| modeName | <code>&#x27;major&#x27;</code> &#124; <code>&#x27;minor&#x27;</code> | a mode name |
+| modeName | <code>&#x27;major&#x27;</code> &#124; <code>&#x27;minor&#x27;</code> &#124; <code>&#x27;ionian&#x27;</code> &#124; <code>&#x27;dorian&#x27;</code> &#124; <code>&#x27;phrygian&#x27;</code> &#124; <code>&#x27;lydian&#x27;</code> &#124; <code>&#x27;mixolydian&#x27;</code> &#124; <code>&#x27;aeolian&#x27;</code> &#124; <code>&#x27;locrian&#x27;</code> | a mode name |
 
 **Example**  
 ```js

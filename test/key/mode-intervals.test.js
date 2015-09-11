@@ -6,6 +6,7 @@ test('modeIntervals()', function (t) {
 
   t.deepEqual(modeIntervals('major'), major)
   t.deepEqual(modeIntervals('MAJOR'), major)
+  t.deepEqual(modeIntervals('minor'), modeIntervals('aeolian'))
   t.throws(function () {modeIntervals('not_a_mode')})
 
   t.end()
