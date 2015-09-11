@@ -82,6 +82,12 @@ Creates a new key.
 | --- | --- | --- |
 | degree | <code>number</code> | the desired scale degree of this scale (an integer > 0) |
 
+**Example**  
+```js
+var a_major = new Key('A3', 'major')
+a_major.scaleDegree(3)   => 'C#4' <Pitch>
+a_major.scaleDegree(10)  => 'C#5' <Pitch>
+```
 <a name="Pitch"></a>
 ## Pitch
 **Kind**: global class  
