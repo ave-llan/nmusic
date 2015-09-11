@@ -51,7 +51,8 @@ negative intervals as well.</p>
 | Name | Type | Description |
 | --- | --- | --- |
 | tonic | <code>[Pitch](#Pitch)</code> | the tonic of this scale |
-| mode | <code>Array.&lt;string&gt;</code> | - |
+| modeName | <code>string</code> | a string representing the mode name. If custom mode is provided, defaults to 'custom-scale' |
+| mode | <code>Array.&lt;string&gt;</code> | an array of interval strings representing the interval each scale degree is from tonic |
 
 
 * [Key](#Key)
