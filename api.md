@@ -58,6 +58,7 @@ negative intervals as well.</p>
 * [Key](#Key)
   * [new Key(tonic, mode)](#new_Key_new)
   * [.toString()](#Key+toString) ⇒ <code>String</code>
+  * [.scaleDegree(degree)](#Key+scaleDegree) ⇒ <code>[Pitch](#Pitch)</code>
 
 <a name="new_Key_new"></a>
 ### new Key(tonic, mode)
@@ -73,6 +74,14 @@ Creates a new key.
 ### key.toString() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Key](#Key)</code>  
 **Returns**: <code>String</code> - the tonic + the modeName ('Bb major')  
+<a name="Key+scaleDegree"></a>
+### key.scaleDegree(degree) ⇒ <code>[Pitch](#Pitch)</code>
+**Kind**: instance method of <code>[Key](#Key)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| degree | <code>number</code> | the desired scale degree of this scale (an integer > 0) |
+
 <a name="Pitch"></a>
 ## Pitch
 **Kind**: global class  
