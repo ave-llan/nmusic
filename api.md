@@ -1,10 +1,15 @@
 ## Classes
 <dl>
+<dt><a href="#Key">Key</a></dt>
+<dd></dd>
 <dt><a href="#Pitch">Pitch</a></dt>
 <dd></dd>
 </dl>
 ## Functions
 <dl>
+<dt><a href="#modeIntervals">modeIntervals(modeName)</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
+<dd><p>returns the intervals that define the scale degrees of a given mode</p>
+</dd>
 <dt><a href="#intervalQuality">intervalQuality(sciPitch1, sciPitch2)</a> ⇒ <code>String</code></dt>
 <dd><p>the interval quality between two pitch strings</p>
 </dd>
@@ -38,6 +43,36 @@ negative intervals as well.</p>
 <dd><p>the <a href="http://newt.phys.unsw.edu.au/jw/notes.html">midi number</a> of this pitch string</p>
 </dd>
 </dl>
+<a name="Key"></a>
+## Key
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| tonic | <code>[Pitch](#Pitch)</code> | the tonic of this scale |
+| mode | <code>Array.&lt;string&gt;</code> | - |
+
+
+* [Key](#Key)
+  * [new Key(tonic, mode, sciPitch)](#new_Key_new)
+  * [.toString()](#Key+toString) ⇒ <code>String</code>
+
+<a name="new_Key_new"></a>
+### new Key(tonic, mode, sciPitch)
+Creates a new key.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| tonic | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | the [tonic](@link https://en.wikipedia.org/wiki/Tonic_(music)) of this scale |
+| mode | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | a string representing a mode name (minor, major, dorian) or an array of interval strings representing the interval each scale degree is from tonic |
+| sciPitch | <code>string</code> &#124; <code>[Pitch](#Pitch)</code> | a pitch string in scientific pitch notation or a Pitch. |
+
+<a name="Key+toString"></a>
+### key.toString() ⇒ <code>String</code>
+**Kind**: instance method of <code>[Key](#Key)</code>  
+**Returns**: <code>String</code> - the tonic + the modeName ('Bb major')  
 <a name="Pitch"></a>
 ## Pitch
 **Kind**: global class  
@@ -235,6 +270,23 @@ plusInterval(pitch_C4, 10)     => Pitch: E5
 plusInterval(pitch_C4, -10)    => Pitch: A2
 plusInterval(pitch_C4, 'm10')  => Pitch: Eb5
 plusInterval(pitch_C4, '-d7')  => Pitch: D#3
+```
+<a name="modeIntervals"></a>
+## modeIntervals(modeName) ⇒ <code>Array.&lt;string&gt;</code>
+returns the intervals that define the scale degrees of a given mode
+
+**Kind**: global function  
+**Returns**: <code>Array.&lt;string&gt;</code> - an array of interval strings representing the
+interval each scale degree is from tonic, always starting with 'P1' for tonic  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| modeName | <code>&#x27;major&#x27;</code> &#124; <code>&#x27;minor&#x27;</code> | a mode name |
+
+**Example**  
+```js
+modeIntervals('major')  => ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'M7']
+modeIntervals('dorian') => ['P1', 'M2', 'm3', 'P4', 'P5', 'M6', 'm7']
 ```
 <a name="intervalQuality"></a>
 ## intervalQuality(sciPitch1, sciPitch2) ⇒ <code>String</code>
