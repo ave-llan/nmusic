@@ -56,11 +56,11 @@ negative intervals as well.</p>
 
 
 * [Key](#Key)
-  * [new Key(tonic, mode, sciPitch)](#new_Key_new)
+  * [new Key(tonic, mode)](#new_Key_new)
   * [.toString()](#Key+toString) ⇒ <code>String</code>
 
 <a name="new_Key_new"></a>
-### new Key(tonic, mode, sciPitch)
+### new Key(tonic, mode)
 Creates a new key.
 
 
@@ -68,7 +68,6 @@ Creates a new key.
 | --- | --- | --- |
 | tonic | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | the [tonic](@link https://en.wikipedia.org/wiki/Tonic_(music)) of this scale |
 | mode | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | a string representing a mode name (minor, major, dorian) or an array of interval strings representing the interval each scale degree is from tonic |
-| sciPitch | <code>string</code> &#124; <code>[Pitch](#Pitch)</code> | a pitch string in scientific pitch notation or a Pitch. |
 
 <a name="Key+toString"></a>
 ### key.toString() ⇒ <code>String</code>
