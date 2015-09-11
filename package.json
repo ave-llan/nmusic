@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "standard && tape test/**/*.test.js",
+    "test": "standard && tape test/**/*.test.js | faucet",
     "docs": "jsdoc2md lib/**/*.js > api.md"
   },
   "repository": {
@@ -35,6 +35,7 @@
   },
   "homepage": "https://github.com/jrleszcz/nmusic#readme",
   "devDependencies": {
+    "faucet": "0.0.1",
     "jsdoc-to-markdown": "^1.1.1",
     "standard": "^5.1.0",
     "tape": "^4.2.0"
