@@ -2,7 +2,6 @@ var test = require('tape')
 var parseInterval = require('../../lib/pitch/parse-interval.js')
 
 test('interval parsing works for notes without accidentals', function (t) {
-
   t.deepEqual(parseInterval('M6'),
     { interval: 'M6',
       direction: 1,

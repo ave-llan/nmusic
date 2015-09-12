@@ -15,11 +15,21 @@ test('toMidi returns the correct number', function (t) {
 })
 
 test('toMidi throws an error for invalid pitches', function (t) {
-  t.throws(function () {toMidi('AA3')}, Error)
-  t.throws(function () {toMidi('3')}, Error)
-  t.throws(function () {toMidi('bB3')}, Error)
-  t.throws(function () {toMidi('#A4')}, Error)
-  t.throws(function () {toMidi('')}, Error)
+  t.throws(function () {
+    toMidi('AA3')
+  }, Error)
+  t.throws(function () {
+    toMidi('3')
+  }, Error)
+  t.throws(function () {
+    toMidi('bB3')
+  }, Error)
+  t.throws(function () {
+    toMidi('#A4')
+  }, Error)
+  t.throws(function () {
+    toMidi('')
+  }, Error)
 
   t.end()
 })
