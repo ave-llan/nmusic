@@ -17,5 +17,8 @@ test('scaleSet()', function (t) {
   t.deepEqual(scaleSet('B', 'minor'),
     ['B', 'C#', 'D', 'E', 'F#', 'G', 'A'])
 
+  t.deepEqual(scaleSet('C4', ['P1', 'M2', 'M3', 'A4', 'A5', 'A6']),
+    ['C', 'D', 'E', 'F#', 'G#', 'A#'])
+
   t.end()
 })

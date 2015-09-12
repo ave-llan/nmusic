@@ -17,5 +17,7 @@ test('scale()', function (t) {
   t.deepEqual(scale('B2', 'minor'),
     ['B2', 'C#3', 'D3', 'E3', 'F#3', 'G3', 'A3'])
 
+  t.deepEqual(scale('C4', ['P1', 'M2', 'M3', 'A4', 'A5', 'A6']),
+    ['C4', 'D4', 'E4', 'F#4', 'G#4', 'A#4'])
   t.end()
 })
