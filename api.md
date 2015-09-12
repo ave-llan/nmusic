@@ -69,6 +69,7 @@ Will not work if the object or array contains non-primitives.</p>
 * [Key](#Key)
   * [new Key(tonic, mode)](#new_Key_new)
   * [.toString()](#Key+toString) ⇒ <code>String</code>
+  * [.pitchAtDegree(degree)](#Key+pitchAtDegree) ⇒ <code>string</code>
 
 <a name="new_Key_new"></a>
 ### new Key(tonic, mode)
@@ -85,6 +86,23 @@ to octave number.
 ### key.toString() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Key](#Key)</code>  
 **Returns**: <code>String</code> - the tonic + the modeName ('Bb major')  
+<a name="Key+pitchAtDegree"></a>
+### key.pitchAtDegree(degree) ⇒ <code>string</code>
+returns the pitch class at the requested scale degree
+
+**Kind**: instance method of <code>[Key](#Key)</code>  
+**Returns**: <code>string</code> - a pitch class string  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| degree | <code>number</code> | the desired scale degree of this scale (an integer > 0) |
+
+**Example**  
+```js
+var a_major = new Key('A3', 'major')
+a_major.scaleDegree(3)   => 'C#'
+a_major.scaleDegree(10)  => 'C#'
+```
 <a name="Pitch"></a>
 ## Pitch
 **Kind**: global class  

@@ -30,20 +30,18 @@ test('Key constructor', function (t) {
   t.end()
 })
 
-/*
-test('Key.scaleDegree()', function (t) {
+test('Key.pitchAtDegree()', function (t) {
   var a_major = new Key('A3', 'major')
-  t.true(a_major.scaleDegree(1).equals('A3'))
-  t.true(a_major.scaleDegree(3).equals('C#4'))
-  t.true(a_major.scaleDegree(9).equals('B4'))
-  t.true(a_major.scaleDegree(10).equals('C#5'))
+  t.equal(a_major.pitchAtDegree(1), 'A')
+  t.equal(a_major.pitchAtDegree(3), 'C#')
+  t.equal(a_major.pitchAtDegree(9), 'B')
+  t.equal(a_major.pitchAtDegree(10), 'C#')
 
   var eb_dorian = new Key('Eb5', 'dorian')
-  t.true(eb_dorian.scaleDegree(1).equals('Eb5'))
-  t.true(eb_dorian.scaleDegree(3).equals('Gb5'))
-  t.true(eb_dorian.scaleDegree(6).equals('C6'))
-  t.true(eb_dorian.scaleDegree(9).equals('F6'))
+  t.equal(eb_dorian.pitchAtDegree(1), 'Eb')
+  t.equal(eb_dorian.pitchAtDegree(3), 'Gb')
+  t.equal(eb_dorian.pitchAtDegree(6), 'C')
+  t.equal(eb_dorian.pitchAtDegree(9), 'F')
 
   t.end()
 })
-*/
