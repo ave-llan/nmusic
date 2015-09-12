@@ -11,9 +11,26 @@ test('Key constructor', function (t) {
   t.equal(String(new Key('Bb4', 'DORIAN')), 'Bb dorian')
   t.equal(String(Key('a', ['P1', 'M2', 'M3', 'A4', 'A5', 'A6'])), 'A custom-scale')
 
+  var a_major = new Key('A3', 'major')
+  t.equal(a_major.tonic.pitchClass(), 'A')
+  t.equal(a_major.modeName, 'major')
+  t.deepEqual(a_major.mode, ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'M7'])
+  t.deepEqual(a_major.scale, ['A', 'B', 'C#', 'D', 'E', 'F#', 'G#'])
+
+  a_major.mode = 'test'
+  t.equal(a_major.modeName, 'major')
+
+  t.throws(function () {
+    a_major.mode.push('A8')
+  }, Error)
+
+  a_major.scale[0] = 'Eb'
+  t.deepEqual(a_major.scale, ['A', 'B', 'C#', 'D', 'E', 'F#', 'G#'])
+
   t.end()
 })
 
+/*
 test('Key.scaleDegree()', function (t) {
   var a_major = new Key('A3', 'major')
   t.true(a_major.scaleDegree(1).equals('A3'))
@@ -29,3 +46,4 @@ test('Key.scaleDegree()', function (t) {
 
   t.end()
 })
+*/

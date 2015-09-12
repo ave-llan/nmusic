@@ -10,6 +10,12 @@
 <dt><a href="#modeIntervals">modeIntervals(modeName)</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
 <dd><p>returns the intervals that define the scale degrees of a given mode</p>
 </dd>
+<dt><a href="#scaleSet">scaleSet(tonic, mode)</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
+<dd><p>given a pitch string and scale mode, build a pitch class scale from that pitch</p>
+</dd>
+<dt><a href="#scale">scale(tonic, mode)</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
+<dd><p>given a pitch string and scale mode, build a scale from that pitch</p>
+</dd>
 <dt><a href="#intervalQuality">intervalQuality(sciPitch1, sciPitch2)</a> ⇒ <code>String</code></dt>
 <dd><p>the interval quality between two pitch strings</p>
 </dd>
@@ -42,6 +48,10 @@ negative intervals as well.</p>
 <dt><a href="#toMidi">toMidi(sciPitch)</a> ⇒ <code>Number</code></dt>
 <dd><p>the <a href="http://newt.phys.unsw.edu.au/jw/notes.html">midi number</a> of this pitch string</p>
 </dd>
+<dt><a href="#clone">clone(obj)</a> ⇒ <code>object</code> | <code>array</code></dt>
+<dd><p>helper function to clone a simple object/array made up of primitives.
+Will not work if the object or array contains non-primitives.</p>
+</dd>
 </dl>
 <a name="Key"></a>
 ## Key
@@ -50,44 +60,31 @@ negative intervals as well.</p>
 
 | Name | Type | Description |
 | --- | --- | --- |
-| tonic | <code>[Pitch](#Pitch)</code> | the tonic of this scale |
+| tonic | <code>[Pitch](#Pitch)</code> | the tonic of this scale. Although all Pitch instances have an octave number, it is not used in the Key methods. |
 | modeName | <code>string</code> | a string representing the mode name. If custom mode is provided, defaults to 'custom-scale' |
 | mode | <code>Array.&lt;string&gt;</code> | an array of interval strings representing the interval each scale degree is from tonic |
+| scale | <code>Array.&lt;string&gt;</code> | an array of pitch class strings |
 
 
 * [Key](#Key)
   * [new Key(tonic, mode)](#new_Key_new)
   * [.toString()](#Key+toString) ⇒ <code>String</code>
-  * [.scaleDegree(degree)](#Key+scaleDegree) ⇒ <code>[Pitch](#Pitch)</code>
 
 <a name="new_Key_new"></a>
 ### new Key(tonic, mode)
-Creates a new key.
+Creates a new key. Note that most Key methods use pitch classes without reguards
+to octave number.
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| tonic | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | the [tonic](@link https://en.wikipedia.org/wiki/Tonic_(music)) of this scale |
+| tonic | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | the [tonic](@link https://en.wikipedia.org/wiki/Tonic_(music)) of this scale. Octave number may be provided, but do not affect the Key methods. |
 | mode | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | a string representing a mode name (minor, major, dorian) or an array of interval strings representing the interval each scale degree is from tonic |
 
 <a name="Key+toString"></a>
 ### key.toString() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Key](#Key)</code>  
 **Returns**: <code>String</code> - the tonic + the modeName ('Bb major')  
-<a name="Key+scaleDegree"></a>
-### key.scaleDegree(degree) ⇒ <code>[Pitch](#Pitch)</code>
-**Kind**: instance method of <code>[Key](#Key)</code>  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| degree | <code>number</code> | the desired scale degree of this scale (an integer > 0) |
-
-**Example**  
-```js
-var a_major = new Key('A3', 'major')
-a_major.scaleDegree(3)   => 'C#4' <Pitch>
-a_major.scaleDegree(10)  => 'C#5' <Pitch>
-```
 <a name="Pitch"></a>
 ## Pitch
 **Kind**: global class  
@@ -303,6 +300,41 @@ interval each scale degree is from tonic, always starting with 'P1' for tonic
 modeIntervals('major')  => ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'M7']
 modeIntervals('dorian') => ['P1', 'M2', 'm3', 'P4', 'P5', 'M6', 'm7']
 ```
+<a name="scaleSet"></a>
+## scaleSet(tonic, mode) ⇒ <code>Array.&lt;string&gt;</code>
+given a pitch string and scale mode, build a pitch class scale from that pitch
+
+**Kind**: global function  
+**Returns**: <code>Array.&lt;string&gt;</code> - an array of pitch class strings  
+**See**: for a similar function which uses octave numbers, see [scale](#scale)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| tonic | <code>string</code> | the [tonic](@link https://en.wikipedia.org/wiki/Tonic_(music)) of this scale. If octave number is provided, it will be ignored. |
+| mode | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | a string representing a mode name (minor, major, dorian) or an array of interval strings representing the interval each scale degree is from tonic |
+
+**Example**  
+```js
+scale('Eb4', 'major')
+=> ['Eb', 'F', 'G', 'Ab', 'Bb', 'C', 'D']
+```
+<a name="scale"></a>
+## scale(tonic, mode) ⇒ <code>Array.&lt;string&gt;</code>
+given a pitch string and scale mode, build a scale from that pitch
+
+**Kind**: global function  
+**Returns**: <code>Array.&lt;string&gt;</code> - an array of pitch strings  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| tonic | <code>string</code> | the [tonic](@link https://en.wikipedia.org/wiki/Tonic_(music)) of this scale |
+| mode | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | a string representing a mode name (minor, major, dorian) or an array of interval strings representing the interval each scale degree is from tonic |
+
+**Example**  
+```js
+scale('Eb4', 'major')
+=> ['Eb4', 'F4', 'G4', 'Ab4', 'Bb4', 'C5', 'D5']
+```
 <a name="intervalQuality"></a>
 ## intervalQuality(sciPitch1, sciPitch2) ⇒ <code>String</code>
 the interval quality between two pitch strings
@@ -469,7 +501,7 @@ with the following properties:
 - letter: string
 - accidental: string
 - numAccidental: number of accidentals [-2, 2], positive for sharps, negative for flats
-- octave: integer
+- octave: integer (if not provided, defaults to 4)
 - sciPitch: string  
 
 | Param | Type | Description |
@@ -582,3 +614,15 @@ toMidi('B#3')   => 60
 toMidi('Bb3')   => 58
 toMidi('A#3')   => 58
 ```
+<a name="clone"></a>
+## clone(obj) ⇒ <code>object</code> &#124; <code>array</code>
+helper function to clone a simple object/array made up of primitives.
+Will not work if the object or array contains non-primitives.
+
+**Kind**: global function  
+**Returns**: <code>object</code> &#124; <code>array</code> - a new clone of the provided object or array  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| obj | <code>object</code> &#124; <code>array</code> | an object array made up only of primitives |
+
