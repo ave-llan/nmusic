@@ -62,3 +62,18 @@ test('Key.inKey()', function (t) {
 
   t.end()
 })
+
+test('Key.accidentalOn()', function (t) {
+  var eb_major = new Key('Eb', 'major')
+  t.equal(eb_major.accidentalOn('B'), 'b')
+  t.equal(eb_major.accidentalOn('E#2'), 'b')
+  t.equal(eb_major.accidentalOn('F3'), '')
+  t.equal(eb_major.accidentalOn('A'), 'b')
+
+  var c_sharp_major = new Key('C#', 'major')
+  t.equal(c_sharp_major.accidentalOn('C'), '#')
+  t.equal(c_sharp_major.accidentalOn('B'), '#')
+  t.equal(c_sharp_major.accidentalOn('Db2'), '#')
+
+  t.end()
+})

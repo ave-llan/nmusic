@@ -70,6 +70,7 @@ Will not work if the object or array contains non-primitives.</p>
   * [new Key(tonic, mode)](#new_Key_new)
   * [.toString()](#Key+toString) ⇒ <code>String</code>
   * [.inKey(pitch)](#Key+inKey) ⇒ <code>boolean</code>
+  * [.accidentalOn(pitch)](#Key+accidentalOn) ⇒ <code>string</code>
   * [.pitchAtDegree(degree)](#Key+pitchAtDegree) ⇒ <code>[Pitch](#Pitch)</code>
 
 <a name="new_Key_new"></a>
@@ -104,6 +105,18 @@ var a_major = new Key('A3', 'major')
 a_major.inKey('C3')   => false
 a_major.inKey('C#3')  => true
 ```
+<a name="Key+accidentalOn"></a>
+### key.accidentalOn(pitch) ⇒ <code>string</code>
+given a letter and key, returns the accidental that should be on this letter
+in this key
+
+**Kind**: instance method of <code>[Key](#Key)</code>  
+**Returns**: <code>string</code> - the accidental that needs to be added to this letter for it to be in the key  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | a pitch string or Pitch |
+
 <a name="Key+pitchAtDegree"></a>
 ### key.pitchAtDegree(degree) ⇒ <code>[Pitch](#Pitch)</code>
 returns the Pitch at the requested scale degree. Although Pitches default to octave
