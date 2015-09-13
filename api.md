@@ -69,7 +69,7 @@ Will not work if the object or array contains non-primitives.</p>
 * [Key](#Key)
   * [new Key(tonic, mode)](#new_Key_new)
   * [.toString()](#Key+toString) ⇒ <code>String</code>
-  * [.pitchAtDegree(degree)](#Key+pitchAtDegree) ⇒ <code>string</code>
+  * [.pitchAtDegree(degree)](#Key+pitchAtDegree) ⇒ <code>[Pitch](#Pitch)</code>
 
 <a name="new_Key_new"></a>
 ### new Key(tonic, mode)
@@ -87,11 +87,12 @@ to octave number.
 **Kind**: instance method of <code>[Key](#Key)</code>  
 **Returns**: <code>String</code> - the tonic + the modeName ('Bb major')  
 <a name="Key+pitchAtDegree"></a>
-### key.pitchAtDegree(degree) ⇒ <code>string</code>
-returns the pitch class at the requested scale degree
+### key.pitchAtDegree(degree) ⇒ <code>[Pitch](#Pitch)</code>
+returns the Pitch at the requested scale degree. Although Pitches default to octave
+number 4, this should be thought of as a pitch class
 
 **Kind**: instance method of <code>[Key](#Key)</code>  
-**Returns**: <code>string</code> - a pitch class string  
+**Returns**: <code>[Pitch](#Pitch)</code> - a pitch class string  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -100,8 +101,8 @@ returns the pitch class at the requested scale degree
 **Example**  
 ```js
 var a_major = new Key('A3', 'major')
-a_major.scaleDegree(3)   => 'C#'
-a_major.scaleDegree(10)  => 'C#'
+a_major.scaleDegree(3)   => 'C#4'<Pitch>
+a_major.scaleDegree(10)  => 'C#4'<Pitch>
 ```
 <a name="Pitch"></a>
 ## Pitch

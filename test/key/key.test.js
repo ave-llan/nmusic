@@ -32,16 +32,16 @@ test('Key constructor', function (t) {
 
 test('Key.pitchAtDegree()', function (t) {
   var a_major = new Key('A3', 'major')
-  t.equal(a_major.pitchAtDegree(1), 'A')
-  t.equal(a_major.pitchAtDegree(3), 'C#')
-  t.equal(a_major.pitchAtDegree(9), 'B')
-  t.equal(a_major.pitchAtDegree(10), 'C#')
+  t.deepEqual(a_major.pitchAtDegree(1), Pitch('A'))
+  t.deepEqual(a_major.pitchAtDegree(3), Pitch('C#'))
+  t.deepEqual(a_major.pitchAtDegree(9), Pitch('B'))
+  t.deepEqual(a_major.pitchAtDegree(10), Pitch('C#'))
 
   var eb_dorian = new Key('Eb5', 'dorian')
-  t.equal(eb_dorian.pitchAtDegree(1), 'Eb')
-  t.equal(eb_dorian.pitchAtDegree(3), 'Gb')
-  t.equal(eb_dorian.pitchAtDegree(6), 'C')
-  t.equal(eb_dorian.pitchAtDegree(9), 'F')
+  t.deepEqual(eb_dorian.pitchAtDegree(1), Pitch('Eb'))
+  t.deepEqual(eb_dorian.pitchAtDegree(3), Pitch('Gb'))
+  t.deepEqual(eb_dorian.pitchAtDegree(6), Pitch('C'))
+  t.deepEqual(eb_dorian.pitchAtDegree(9), Pitch('F'))
 
   t.end()
 })
