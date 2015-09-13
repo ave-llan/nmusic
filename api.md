@@ -69,6 +69,7 @@ Will not work if the object or array contains non-primitives.</p>
 * [Key](#Key)
   * [new Key(tonic, mode)](#new_Key_new)
   * [.toString()](#Key+toString) ⇒ <code>String</code>
+  * [.inKey(pitch)](#Key+inKey) ⇒ <code>boolean</code>
   * [.pitchAtDegree(degree)](#Key+pitchAtDegree) ⇒ <code>[Pitch](#Pitch)</code>
 
 <a name="new_Key_new"></a>
@@ -86,6 +87,23 @@ to octave number.
 ### key.toString() ⇒ <code>String</code>
 **Kind**: instance method of <code>[Key](#Key)</code>  
 **Returns**: <code>String</code> - the tonic + the modeName ('Bb major')  
+<a name="Key+inKey"></a>
+### key.inKey(pitch) ⇒ <code>boolean</code>
+is this pitch a member of this key?
+
+**Kind**: instance method of <code>[Key](#Key)</code>  
+**Returns**: <code>boolean</code> - is this pitch in the key?  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | a pitch string or Pitch |
+
+**Example**  
+```js
+var a_major = new Key('A3', 'major')
+a_major.inKey('C3')   => false
+a_major.inKey('C#3')  => true
+```
 <a name="Key+pitchAtDegree"></a>
 ### key.pitchAtDegree(degree) ⇒ <code>[Pitch](#Pitch)</code>
 returns the Pitch at the requested scale degree. Although Pitches default to octave

@@ -45,3 +45,20 @@ test('Key.pitchAtDegree()', function (t) {
 
   t.end()
 })
+
+test('Key.inKey()', function (t) {
+  var f_sharp_minor = new Key('F#2', 'minor')
+  t.true(f_sharp_minor.inKey('F#1'))
+  t.true(f_sharp_minor.inKey('F#10'))
+  t.true(f_sharp_minor.inKey(Pitch('G#3')))
+  t.true(f_sharp_minor.inKey('C#5'))
+  t.true(f_sharp_minor.inKey('D'))
+  t.true(f_sharp_minor.inKey('E'))
+
+  t.false(f_sharp_minor.inKey('Eb4'))
+  t.false(f_sharp_minor.inKey('C2'))
+  t.false(f_sharp_minor.inKey('F'))
+  t.false(f_sharp_minor.inKey(Pitch('G')))
+
+  t.end()
+})
