@@ -72,6 +72,7 @@ Will not work if the object or array contains non-primitives.</p>
   * [.inKey(pitch)](#Key+inKey) ⇒ <code>boolean</code>
   * [.accidentalOn(pitch)](#Key+accidentalOn) ⇒ <code>string</code>
   * [.pitchAtDegree(degree)](#Key+pitchAtDegree) ⇒ <code>[Pitch](#Pitch)</code>
+  * [.scaleDegree(pitch)](#Key+scaleDegree) ⇒ <code>number</code>
 
 <a name="new_Key_new"></a>
 ### new Key(tonic, mode)
@@ -134,6 +135,23 @@ number 4, this should be thought of as a pitch class
 var a_major = new Key('A3', 'major')
 a_major.scaleDegree(3)   => 'C#4'<Pitch>
 a_major.scaleDegree(10)  => 'C#4'<Pitch>
+```
+<a name="Key+scaleDegree"></a>
+### key.scaleDegree(pitch) ⇒ <code>number</code>
+returns the scale degree of this pitch or -1 if it is not in the key
+
+**Kind**: instance method of <code>[Key](#Key)</code>  
+**Returns**: <code>number</code> - the scale degree of this pitch or -1 if not in key  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | a pitch string or Pitch |
+
+**Example**  
+```js
+var a_major = new Key('A3', 'major')
+a_major.scaleDegree('C3')   => -1
+a_major.scaleDegree('C#3')  => 3
 ```
 <a name="Pitch"></a>
 ## Pitch

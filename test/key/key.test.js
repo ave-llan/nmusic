@@ -63,6 +63,19 @@ test('Key.inKey()', function (t) {
   t.end()
 })
 
+test('Key.scaleDegree()', function (t) {
+  var eb_major = new Key('Eb', 'major')
+  t.equal(eb_major.scaleDegree('B'), -1)
+  t.equal(eb_major.scaleDegree('Eb2'), 1)
+  t.equal(eb_major.scaleDegree('Eb9'), 1)
+  t.equal(eb_major.scaleDegree('F3'), 2)
+  t.equal(eb_major.scaleDegree('Ab'), 4)
+  t.equal(eb_major.scaleDegree('B#3'), -1)
+  t.equal(eb_major.scaleDegree('C5'), 6)
+
+  t.end()
+})
+
 test('Key.accidentalOn()', function (t) {
   var eb_major = new Key('Eb', 'major')
   t.equal(eb_major.accidentalOn('B'), 'b')
