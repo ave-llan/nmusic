@@ -112,7 +112,8 @@ given a letter and key, returns the accidental that should be on this letter
 in this key
 
 **Kind**: instance method of <code>[Key](#Key)</code>  
-**Returns**: <code>string</code> - the accidental that needs to be added to this letter for it to be in the key  
+**Returns**: <code>string</code> - the accidental that needs to be added to this letter for it
+to be in the key  
 
 | Param | Type | Description |
 | --- | --- | --- |
