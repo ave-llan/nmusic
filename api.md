@@ -73,7 +73,7 @@ Will not work if the object or array contains non-primitives.</p>
   * [.accidentalOn(pitch)](#Key+accidentalOn) ⇒ <code>string</code>
   * [.pitchAtDegree(degree)](#Key+pitchAtDegree) ⇒ <code>[Pitch](#Pitch)</code>
   * [.scaleDegree(pitch)](#Key+scaleDegree) ⇒ <code>number</code>
-  * [.plusInterval(intervalSize)](#Key+plusInterval) ⇒ <code>[Pitch](#Pitch)</code>
+  * [.plusInterval(pitch, intervalSize)](#Key+plusInterval) ⇒ <code>[Pitch](#Pitch)</code>
 
 <a name="new_Key_new"></a>
 ### new Key(tonic, mode)
@@ -157,7 +157,7 @@ a_major.scaleDegree('C3')   => -1
 a_major.scaleDegree('C#3')  => 3
 ```
 <a name="Key+plusInterval"></a>
-### key.plusInterval(intervalSize) ⇒ <code>[Pitch](#Pitch)</code>
+### key.plusInterval(pitch, intervalSize) ⇒ <code>[Pitch](#Pitch)</code>
 gets the correct pitch in the key which is the given interval size away
 
 **Kind**: instance method of <code>[Key](#Key)</code>  
@@ -165,7 +165,7 @@ gets the correct pitch in the key which is the given interval size away
 
 | Param | Type | Description |
 | --- | --- | --- |
-|  | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | the starting Pitch or pitch string |
+| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | the starting Pitch or pitch string |
 | intervalSize | <code>number</code> | an interval as a positive or negative number. |
 
 **Example**  
