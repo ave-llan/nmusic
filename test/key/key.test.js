@@ -88,5 +88,27 @@ test('Key.accidentalOn()', function (t) {
   t.equal(c_sharp_major.accidentalOn('B'), '#')
   t.equal(c_sharp_major.accidentalOn('Db2'), '#')
 
+  var f_dorian = new Key('F6', 'dorian')
+  t.equal(f_dorian.accidentalOn(Pitch('F2')), '')
+  t.equal(f_dorian.accidentalOn(Pitch('F8')), '')
+  t.equal(f_dorian.accidentalOn(Pitch('A1')), 'b')
+  t.equal(f_dorian.accidentalOn(Pitch('B9')), 'b')
+  t.equal(f_dorian.accidentalOn(Pitch('D')), '')
+  t.equal(f_dorian.accidentalOn(Pitch('E')), 'b')
+
+  t.end()
+})
+
+test('Key.plusInterval()', function (t) {
+  var a_flat_major = new Key('Ab', 'major')
+
+  t.deepEqual(a_flat_major.plusInterval('C4', 2), Pitch('Db4'))
+  t.deepEqual(a_flat_major.plusInterval('C4', -2), Pitch('Bb3'))
+  t.deepEqual(a_flat_major.plusInterval('Eb2', 4), Pitch('Ab2'))
+  t.deepEqual(a_flat_major.plusInterval('Eb2', -4), Pitch('Bb1'))
+  t.deepEqual(a_flat_major.plusInterval('Ab4', 6), Pitch('F5'))
+  t.deepEqual(a_flat_major.plusInterval('F##2', 1), Pitch('F2'))
+  t.deepEqual(a_flat_major.plusInterval('Fbb2', 2), Pitch('G2'))
+
   t.end()
 })

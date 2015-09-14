@@ -73,6 +73,7 @@ Will not work if the object or array contains non-primitives.</p>
   * [.accidentalOn(pitch)](#Key+accidentalOn) ⇒ <code>string</code>
   * [.pitchAtDegree(degree)](#Key+pitchAtDegree) ⇒ <code>[Pitch](#Pitch)</code>
   * [.scaleDegree(pitch)](#Key+scaleDegree) ⇒ <code>number</code>
+  * [.plusInterval(intervalSize)](#Key+plusInterval) ⇒ <code>[Pitch](#Pitch)</code>
 
 <a name="new_Key_new"></a>
 ### new Key(tonic, mode)
@@ -113,7 +114,8 @@ in this key. This method only works for standard keys like major or dorian which
 to the seven music letters.
 
 **Kind**: instance method of <code>[Key](#Key)</code>  
-**Returns**: <code>string</code> - the accidental that needs to be added to this letter for it to be in the key  
+**Returns**: <code>string</code> - the accidental that needs to be added to this letter for it
+to be in the key  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -153,6 +155,26 @@ returns the scale degree of this pitch or -1 if it is not in the key
 var a_major = new Key('A3', 'major')
 a_major.scaleDegree('C3')   => -1
 a_major.scaleDegree('C#3')  => 3
+```
+<a name="Key+plusInterval"></a>
+### key.plusInterval(intervalSize) ⇒ <code>[Pitch](#Pitch)</code>
+gets the correct pitch in the key which is the given interval size away
+
+**Kind**: instance method of <code>[Key](#Key)</code>  
+**Returns**: <code>[Pitch](#Pitch)</code> - the resulting Pitch  
+
+| Param | Type | Description |
+| --- | --- | --- |
+|  | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | the starting Pitch or pitch string |
+| intervalSize | <code>number</code> | an interval as a positive or negative number. |
+
+**Example**  
+```js
+var a_flat_major = new Key('Ab', 'major')
+a_flat_major.plusInterval('C4', 2)   => Pitch: Db4
+a_flat_major.plusInterval('C4', -2)  => Pitch: Bb3
+a_flat_major.plusInterval('Eb2', 4)  => Pitch: Ab2
+a_flat_major.plusInterval('G5', -10) => Pitch: Eb4
 ```
 <a name="Pitch"></a>
 ## Pitch
