@@ -1,6 +1,6 @@
 {
   "name": "nmusic",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "./lib/nmusic.js",
   "description": "a JavaScript music library for easy programmatic music composition",
   "directories": {
@@ -20,7 +20,8 @@
   "keywords": [
     "music theory",
     "music",
-    "scales", "scale",
+    "scales",
+    "scale",
     "note",
     "interval",
     "classical",
