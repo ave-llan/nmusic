@@ -98,3 +98,17 @@ test('Key.accidentalOn()', function (t) {
 
   t.end()
 })
+
+test('Key.plusInterval()', function (t) {
+  var a_flat_major = new Key('Ab', 'major')
+
+  t.deepEqual(a_flat_major.plusInterval('C4', 2), Pitch('Db4'))
+  t.deepEqual(a_flat_major.plusInterval('C4', -2), Pitch('Bb3'))
+  t.deepEqual(a_flat_major.plusInterval('Eb2', 4), Pitch('Ab2'))
+  t.deepEqual(a_flat_major.plusInterval('Eb2', -4), Pitch('Bb1'))
+  t.deepEqual(a_flat_major.plusInterval('Ab4', 6), Pitch('F5'))
+  t.deepEqual(a_flat_major.plusInterval('F##2', 1), Pitch('F2'))
+  t.deepEqual(a_flat_major.plusInterval('Fbb2', 2), Pitch('G2'))
+
+  t.end()
+})
