@@ -109,7 +109,8 @@ a_major.inKey('C#3')  => true
 <a name="Key+accidentalOn"></a>
 ### key.accidentalOn(pitch) ⇒ <code>string</code>
 given a letter and key, returns the accidental that should be on this letter
-in this key
+in this key. This method only works for standard keys like major or dorian which map evenly
+to the seven music letters.
 
 **Kind**: instance method of <code>[Key](#Key)</code>  
 **Returns**: <code>string</code> - the accidental that needs to be added to this letter for it to be in the key  
