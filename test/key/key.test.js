@@ -88,5 +88,10 @@ test('Key.accidentalOn()', function (t) {
   t.equal(c_sharp_major.accidentalOn('B'), '#')
   t.equal(c_sharp_major.accidentalOn('Db2'), '#')
 
+  var f_dorian = new Key('F6', 'dorian')
+  t.equal(f_dorian.accidentalOn(Pitch('F2')), '')
+  t.equal(f_dorian.accidentalOn(Pitch('F8')), '')
+  t.equal(f_dorian.accidentalOn(Pitch('A1')), 'b')
+  t.equal(f_dorian.accidentalOn(Pitch('B9')), 'b')
   t.end()
 })
