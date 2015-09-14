@@ -93,5 +93,8 @@ test('Key.accidentalOn()', function (t) {
   t.equal(f_dorian.accidentalOn(Pitch('F8')), '')
   t.equal(f_dorian.accidentalOn(Pitch('A1')), 'b')
   t.equal(f_dorian.accidentalOn(Pitch('B9')), 'b')
+  t.equal(f_dorian.accidentalOn(Pitch('D')), '')
+  t.equal(f_dorian.accidentalOn(Pitch('E')), 'b')
+
   t.end()
 })
