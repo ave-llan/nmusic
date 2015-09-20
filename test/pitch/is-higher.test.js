@@ -1,0 +1,20 @@
+var test = require('tape')
+var isHigher = require('../../lib/pitch/is-higher.js')
+
+test('isHigher()', function (t) {
+  t.equal(isHigher('C4', 'C4'), false)
+  t.equal(isHigher('C4', 'D4'), false)
+  t.equal(isHigher('D4', 'C4'), true)
+  t.equal(isHigher('C4', 'B#3'), false)
+  t.equal(isHigher('B#3', 'C4'), false)
+  t.equal(isHigher('B##3', 'C4'), true)
+  t.equal(isHigher('Cb4', 'B3'), false)
+  t.equal(isHigher('Cb4', 'B#3'), false)
+  t.equal(isHigher('C4', 'C5'), false)
+  t.equal(isHigher('C5', 'C4'), true)
+  t.equal(isHigher('C4', 'C#5'), false)
+  t.equal(isHigher('C4', 'Cb4'), true)
+  t.equal(isHigher('C4', 'Eb5'), false)
+
+  t.end()
+})
