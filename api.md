@@ -195,6 +195,7 @@ a_flat_major.plusInterval('G5', -10) => Pitch: Eb4
   * [.valueOf()](#Pitch+valueOf) ⇒ <code>Number</code>
   * [.equals(that)](#Pitch+equals) ⇒ <code>Boolean</code>
   * [.isEnharmonic(that)](#Pitch+isEnharmonic) ⇒ <code>Boolean</code>
+  * [.isHigher(that)](#Pitch+isHigher) ⇒ <code>Boolean</code>
   * [.sciPitch()](#Pitch+sciPitch) ⇒ <code>String</code>
   * [.letter()](#Pitch+letter) ⇒ <code>String</code>
   * [.accidental()](#Pitch+accidental) ⇒ <code>String</code>
@@ -256,6 +257,16 @@ p2 === p3            => true
 ### pitch.isEnharmonic(that) ⇒ <code>Boolean</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
 **Returns**: <code>Boolean</code> - does this pitch sound identical to that pitch?  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
+
+<a name="Pitch+isHigher"></a>
+### pitch.isHigher(that) ⇒ <code>Boolean</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Boolean</code> - does this pitch sound higher than that pitch?  
+**See**: [isHigher](#isHigher)  
 
 | Param | Type | Description |
 | --- | --- | --- |

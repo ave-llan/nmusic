@@ -168,3 +168,18 @@ test('Pitch.plusInterval', function (t) {
 
   t.end()
 })
+
+test('Pitch.isHigher', function (t) {
+  var pitch_C4 = new Pitch('C4')
+
+  t.true(pitch_C4.isHigher(new Pitch('B3')))
+  t.true(pitch_C4.isHigher('B3'))
+
+  t.false(pitch_C4.isHigher(new Pitch('D4')))
+  t.false(pitch_C4.isHigher('Db4'))
+
+  t.false(pitch_C4.isHigher(new Pitch('B#3')))
+  t.false(pitch_C4.isHigher('B#3'))
+
+  t.end()
+})
