@@ -25,6 +25,9 @@
 <dt><a href="#interval">interval(sciPitch1, sciPitch2)</a> ⇒ <code>String</code></dt>
 <dd><p>the interval between two pitch strings</p>
 </dd>
+<dt><a href="#isHigher">isHigher(sciPitch1, sciPitch2)</a> ⇒ <code>boolean</code></dt>
+<dd><p>does this pitch sound higher than that pitch?</p>
+</dd>
 <dt><a href="#parseInterval">parseInterval(interval)</a> ⇒ <code>Object</code> | <code>false</code></dt>
 <dd><p>parses an interval string or number and return its properties in an object or
 return false if the string or number is not valid</p>
@@ -551,6 +554,29 @@ Contrary to standard practice, an octave is considered compound and reduces to 1
 interval.simple('C4', 'E4')    => 'M3'
 interval.simple('C4', 'E5')    => 'M3'
 interval.simple('C1', 'E9')    => 'M3'
+```
+<a name="isHigher"></a>
+## isHigher(sciPitch1, sciPitch2) ⇒ <code>boolean</code>
+does this pitch sound higher than that pitch?
+
+**Kind**: global function  
+**Returns**: <code>boolean</code> - is sciPitch1 higher than sciPitch2?  
+**Throws**:
+
+- Will throw an error if string is not a valid pitch
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| sciPitch1 | <code>String</code> | a pitch in scientific pitch notation. |
+| sciPitch2 | <code>String</code> | a pitch in scientific pitch notation. |
+
+**Example**  
+```js
+isHigher('D4', 'C4')    => true
+isHigher('C4', 'D4')    => false
+isHigher('C4', 'B#3')   => false   // enharmonic, so they actually sound equal
+isHigher('B##3', 'C4')  => true    // B##3 sounds higher than C4
 ```
 <a name="parseInterval"></a>
 ## parseInterval(interval) ⇒ <code>Object</code> &#124; <code>false</code>
