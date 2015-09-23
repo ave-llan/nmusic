@@ -646,10 +646,10 @@ false if the string is not valid
 **Returns**: <code>object</code> &#124; <code>false</code> - False if invalid pitch string or an object
 with the following properties:
 - letter: string
-- accidental: string
+- accidental: [AccidentalString](#AccidentalString)
 - numAccidental: number of accidentals [-2, 2], positive for sharps, negative for flats
 - octave: integer (if not provided, defaults to 4)
-- sciPitch: string  
+- sciPitch: [PitchString](#PitchString)  
 
 | Param | Type | Description |
 | --- | --- | --- |
