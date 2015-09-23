@@ -10,10 +10,10 @@
 <dt><a href="#modeIntervals">modeIntervals(modeName)</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
 <dd><p>returns the intervals that define the scale degrees of a given mode</p>
 </dd>
-<dt><a href="#scaleSet">scaleSet(tonic, mode)</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
+<dt><a href="#scaleSet">scaleSet(tonic, mode)</a> ⇒ <code><a href="#PitchString">Array.&lt;PitchString&gt;</a></code></dt>
 <dd><p>given a pitch string and scale mode, build a pitch class scale from that pitch</p>
 </dd>
-<dt><a href="#scale">scale(tonic, mode)</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
+<dt><a href="#scale">scale(tonic, mode)</a> ⇒ <code><a href="#PitchString">Array.&lt;PitchString&gt;</a></code></dt>
 <dd><p>given a pitch string and scale mode, build a scale from that pitch</p>
 </dd>
 <dt><a href="#intervalQuality">intervalQuality(sciPitch1, sciPitch2)</a> ⇒ <code>String</code></dt>
@@ -75,7 +75,7 @@ Will not work if the object or array contains non-primitives.</p>
 | tonic | <code>[Pitch](#Pitch)</code> | the tonic of this scale. Although all Pitch instances have an octave number, it is not used in the Key methods. |
 | modeName | <code>string</code> | a string representing the mode name. If custom mode is provided, defaults to 'custom-scale' |
 | mode | <code>Array.&lt;string&gt;</code> | an array of interval strings representing the interval each scale degree is from tonic |
-| scale | <code>Array.&lt;string&gt;</code> | an array of pitch class strings |
+| scale | <code>[Array.&lt;PitchString&gt;](#PitchString)</code> | an array of pitch class strings |
 
 
 * [Key](#Key)
@@ -95,7 +95,7 @@ to octave number.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| tonic | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | the [tonic](@link https://en.wikipedia.org/wiki/Tonic_(music)) of this scale. Octave number may be provided, but do not affect the Key methods. |
+| tonic | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | the [tonic](@link https://en.wikipedia.org/wiki/Tonic_(music)) of this scale. Octave number may be provided, but do not affect the Key methods. |
 | mode | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | a string representing a mode name (minor, major, dorian) or an array of interval strings representing the interval each scale degree is from tonic |
 
 <a name="Key+toString"></a>
@@ -111,7 +111,7 @@ is this pitch a member of this key?
 
 | Param | Type | Description |
 | --- | --- | --- |
-| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | a pitch string or Pitch |
+| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a pitch string or Pitch |
 
 **Example**  
 ```js
@@ -131,7 +131,7 @@ to be in the key
 
 | Param | Type | Description |
 | --- | --- | --- |
-| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | a pitch string or Pitch |
+| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a pitch string or Pitch |
 
 <a name="Key+pitchAtDegree"></a>
 ### key.pitchAtDegree(degree) ⇒ <code>[Pitch](#Pitch)</code>
@@ -160,7 +160,7 @@ returns the scale degree of this pitch or -1 if it is not in the key
 
 | Param | Type | Description |
 | --- | --- | --- |
-| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | a pitch string or Pitch |
+| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a pitch string or Pitch |
 
 **Example**  
 ```js
@@ -177,7 +177,7 @@ gets the correct pitch in the key which is the given interval size away
 
 | Param | Type | Description |
 | --- | --- | --- |
-| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>string</code> | the starting Pitch or pitch string |
+| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | the starting Pitch or pitch string |
 | intervalSize | <code>number</code> | an interval as a positive or negative number. |
 
 **Example**  
@@ -415,16 +415,16 @@ modeIntervals('major')  => ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'M7']
 modeIntervals('dorian') => ['P1', 'M2', 'm3', 'P4', 'P5', 'M6', 'm7']
 ```
 <a name="scaleSet"></a>
-## scaleSet(tonic, mode) ⇒ <code>Array.&lt;string&gt;</code>
+## scaleSet(tonic, mode) ⇒ <code>[Array.&lt;PitchString&gt;](#PitchString)</code>
 given a pitch string and scale mode, build a pitch class scale from that pitch
 
 **Kind**: global function  
-**Returns**: <code>Array.&lt;string&gt;</code> - an array of pitch class strings  
+**Returns**: <code>[Array.&lt;PitchString&gt;](#PitchString)</code> - an array of pitch class strings (without octave number)  
 **See**: for a similar function which uses octave numbers, see [scale](#scale)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| tonic | <code>string</code> | the [tonic](@link https://en.wikipedia.org/wiki/Tonic_(music)) of this scale. If octave number is provided, it will be ignored. |
+| tonic | <code>[PitchString](#PitchString)</code> | the [tonic](@link https://en.wikipedia.org/wiki/Tonic_(music)) of this scale. If octave number is provided, it will be ignored. |
 | mode | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | a string representing a mode name (minor, major, dorian) or an array of interval strings representing the interval each scale degree is from tonic |
 
 **Example**  
@@ -433,15 +433,15 @@ scale('Eb4', 'major')
 => ['Eb', 'F', 'G', 'Ab', 'Bb', 'C', 'D']
 ```
 <a name="scale"></a>
-## scale(tonic, mode) ⇒ <code>Array.&lt;string&gt;</code>
+## scale(tonic, mode) ⇒ <code>[Array.&lt;PitchString&gt;](#PitchString)</code>
 given a pitch string and scale mode, build a scale from that pitch
 
 **Kind**: global function  
-**Returns**: <code>Array.&lt;string&gt;</code> - an array of pitch strings  
+**Returns**: <code>[Array.&lt;PitchString&gt;](#PitchString)</code> - an array of pitch strings  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| tonic | <code>string</code> | the [tonic](@link https://en.wikipedia.org/wiki/Tonic_(music)) of this scale |
+| tonic | <code>[PitchString](#PitchString)</code> | the [tonic](@link https://en.wikipedia.org/wiki/Tonic_(music)) of this scale |
 | mode | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | a string representing a mode name (minor, major, dorian) or an array of interval strings representing the interval each scale degree is from tonic |
 
 **Example**  
