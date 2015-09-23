@@ -56,6 +56,15 @@ negative intervals as well.</p>
 Will not work if the object or array contains non-primitives.</p>
 </dd>
 </dl>
+## Typedefs
+<dl>
+<dt><a href="#PitchString">PitchString</a> : <code>string</code></dt>
+<dd><p>a string consisting of a music Letter [A-G], optional accidental,
+                                and optional octave number. Must match the regular expression:
+                                /(A-G)(b{1,2}|#{1,2})?(\d{1,2})?/. If octave number is not provided,
+                                it will default to octave 4.</p>
+</dd>
+</dl>
 <a name="Key"></a>
 ## Key
 **Kind**: global class  
@@ -186,7 +195,7 @@ a_flat_major.plusInterval('G5', -10) => Pitch: Eb4
 
 | Name | Type | Description |
 | --- | --- | --- |
-| Pitch.name | <code>string</code> | this pitch in scientific pitch notation |
+| Pitch.name | <code>[PitchString](#PitchString)</code> | this pitch in scientific pitch notation |
 
 
 * [Pitch](#Pitch)
@@ -221,7 +230,7 @@ Creates a new immutable Pitch or if given an existing Pitch, returns it.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sciPitch | <code>string</code> &#124; <code>[Pitch](#Pitch)</code> | a pitch string in scientific pitch notation or a Pitch. |
+| sciPitch | <code>[PitchString](#PitchString)</code> &#124; <code>[Pitch](#Pitch)</code> | a pitch string in scientific pitch notation or a Pitch. |
 
 **Example**  
 ```js
@@ -754,3 +763,19 @@ Will not work if the object or array contains non-primitives.
 | --- | --- | --- |
 | obj | <code>object</code> &#124; <code>array</code> | an object array made up only of primitives |
 
+<a name="PitchString"></a>
+## PitchString : <code>string</code>
+a string consisting of a music Letter [A-G], optional accidental,
+                                and optional octave number. Must match the regular expression:
+                                /(A-G)(b{1,2}|#{1,2})?(\d{1,2})?/. If octave number is not provided,
+                                it will default to octave 4.
+
+**Kind**: global typedef  
+**Example**  
+```js
+'C4'     // middle C on a piano, the fourth octave
+'Eb3'    // Eb in octave 3
+'F#'     // no octave number provided, a pitch class
+'F##'    // F double sharp
+'Dbb'    // D double flat
+```
