@@ -61,15 +61,15 @@ Will not work if the object or array contains non-primitives.</p>
 <dt><a href="#MusicLetter">MusicLetter</a> : <code>&#x27;A&#x27;</code> | <code>&#x27;B&#x27;</code> | <code>&#x27;C&#x27;</code> | <code>&#x27;D&#x27;</code> | <code>&#x27;E&#x27;</code> | <code>&#x27;F&#x27;</code> | <code>&#x27;G&#x27;</code></dt>
 <dd><p>[A-G] representing a musical lettername</p>
 </dd>
-<dt><a href="#AccidentalString">AccidentalString</a> : <code>string</code></dt>
+<dt><a href="#AccidentalString">AccidentalString</a> : <code>&#x27;#&#x27;</code> | <code>&#x27;b&#x27;</code> | <code>&#x27;##&#x27;</code> | <code>&#x27;bb&#x27;</code></dt>
 <dd><p>&#39;#&#39; for sharp, &#39;b&#39; for flat.
-                                     &#39;##&#39;&#39; for double sharp, &#39;bb&#39; for double flat.</p>
+                                                &#39;##&#39;&#39; for double sharp, &#39;bb&#39; for double flat.</p>
 </dd>
 <dt><a href="#PitchString">PitchString</a> : <code>string</code></dt>
-<dd><p><a href="#MusicLetter">MusicLetter</a> + optional <a href="#AccidentalString">AccidentalString</a> +
-                                optional octave number. Must match the regular expression:
-                                /(A-G)(b{1,2}|#{1,2})?(\d{1,2})?/. If octave number is not provided,
-                                it will default to octave 4.</p>
+<dd><p><a href="#MusicLetter">MusicLetter</a> + [<a href="#AccidentalString">AccidentalString</a>] +
+                                [octave number]. Must match the regular expression:
+                                /(A-G)(b{1,2}|#{1,2})?(\d{1,2})?/. Accidental and octave number are optional,
+                                but if octave number is not provided, it will default to octave 4.</p>
 </dd>
 </dl>
 <a name="Key"></a>
@@ -776,17 +776,17 @@ Will not work if the object or array contains non-primitives.
 
 **Kind**: global typedef  
 <a name="AccidentalString"></a>
-## AccidentalString : <code>string</code>
+## AccidentalString : <code>&#x27;#&#x27;</code> &#124; <code>&#x27;b&#x27;</code> &#124; <code>&#x27;##&#x27;</code> &#124; <code>&#x27;bb&#x27;</code>
 '#' for sharp, 'b' for flat.
-                                     '##'' for double sharp, 'bb' for double flat.
+                                                '##'' for double sharp, 'bb' for double flat.
 
 **Kind**: global typedef  
 <a name="PitchString"></a>
 ## PitchString : <code>string</code>
-[MusicLetter](#MusicLetter) + optional [AccidentalString](#AccidentalString) +
-                                optional octave number. Must match the regular expression:
-                                /(A-G)(b{1,2}|#{1,2})?(\d{1,2})?/. If octave number is not provided,
-                                it will default to octave 4.
+[MusicLetter](#MusicLetter) + [[AccidentalString](#AccidentalString)] +
+                                [octave number]. Must match the regular expression:
+                                /(A-G)(b{1,2}|#{1,2})?(\d{1,2})?/. Accidental and octave number are optional,
+                                but if octave number is not provided, it will default to octave 4.
 
 **Kind**: global typedef  
 **Example**  
