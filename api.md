@@ -200,12 +200,12 @@ a_flat_major.plusInterval('G5', -10) => Pitch: Eb4
 
 * [Pitch](#Pitch)
   * [new Pitch(sciPitch)](#new_Pitch_new)
-  * [.toString()](#Pitch+toString) ⇒ <code>String</code>
+  * [.toString()](#Pitch+toString) ⇒ <code>[PitchString](#PitchString)</code>
   * [.valueOf()](#Pitch+valueOf) ⇒ <code>Number</code>
   * [.equals(that)](#Pitch+equals) ⇒ <code>Boolean</code>
   * [.isEnharmonic(that)](#Pitch+isEnharmonic) ⇒ <code>Boolean</code>
   * [.isHigher(that)](#Pitch+isHigher) ⇒ <code>Boolean</code>
-  * [.sciPitch()](#Pitch+sciPitch) ⇒ <code>String</code>
+  * [.sciPitch()](#Pitch+sciPitch) ⇒ <code>[PitchString](#PitchString)</code>
   * [.letter()](#Pitch+letter) ⇒ <code>String</code>
   * [.accidental()](#Pitch+accidental) ⇒ <code>String</code>
   * [.octave()](#Pitch+octave) ⇒ <code>Number</code>
@@ -245,9 +245,9 @@ p2 === p3            => true
 // this can be used to write functions which accept pitch strings or Pitches as a parameter
 ```
 <a name="Pitch+toString"></a>
-### pitch.toString() ⇒ <code>String</code>
+### pitch.toString() ⇒ <code>[PitchString](#PitchString)</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
-**Returns**: <code>String</code> - string in scientfic pitch notation  
+**Returns**: <code>[PitchString](#PitchString)</code> - string in scientfic pitch notation  
 <a name="Pitch+valueOf"></a>
 ### pitch.valueOf() ⇒ <code>Number</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
@@ -260,7 +260,7 @@ p2 === p3            => true
 
 | Param | Type | Description |
 | --- | --- | --- |
-| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
 
 <a name="Pitch+isEnharmonic"></a>
 ### pitch.isEnharmonic(that) ⇒ <code>Boolean</code>
@@ -269,7 +269,7 @@ p2 === p3            => true
 
 | Param | Type | Description |
 | --- | --- | --- |
-| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
 
 <a name="Pitch+isHigher"></a>
 ### pitch.isHigher(that) ⇒ <code>Boolean</code>
@@ -279,12 +279,12 @@ p2 === p3            => true
 
 | Param | Type | Description |
 | --- | --- | --- |
-| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
 
 <a name="Pitch+sciPitch"></a>
-### pitch.sciPitch() ⇒ <code>String</code>
+### pitch.sciPitch() ⇒ <code>[PitchString](#PitchString)</code>
 **Kind**: instance method of <code>[Pitch](#Pitch)</code>  
-**Returns**: <code>String</code> - in [scientfic pitch notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation)
+**Returns**: <code>[PitchString](#PitchString)</code> - in [scientfic pitch notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation)
 (same as pitch.name)  
 <a name="Pitch+letter"></a>
 ### pitch.letter() ⇒ <code>String</code>
@@ -337,7 +337,7 @@ toMidi('A#3')   => 58
 
 | Param | Type | Description |
 | --- | --- | --- |
-| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
 
 <a name="Pitch+intervalSize"></a>
 ### pitch.intervalSize(that) ⇒ <code>Number</code>
@@ -347,7 +347,7 @@ toMidi('A#3')   => 58
 
 | Param | Type | Description |
 | --- | --- | --- |
-| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
 
 <a name="Pitch+simpleIntervalSize"></a>
 ### pitch.simpleIntervalSize(that) ⇒ <code>Number</code>
@@ -357,7 +357,7 @@ toMidi('A#3')   => 58
 
 | Param | Type | Description |
 | --- | --- | --- |
-| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
 
 <a name="Pitch+interval"></a>
 ### pitch.interval(that) ⇒ <code>String</code>
@@ -367,7 +367,7 @@ toMidi('A#3')   => 58
 
 | Param | Type | Description |
 | --- | --- | --- |
-| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
 
 <a name="Pitch+simpleInterval"></a>
 ### pitch.simpleInterval(that) ⇒ <code>String</code>
@@ -377,7 +377,7 @@ toMidi('A#3')   => 58
 
 | Param | Type | Description |
 | --- | --- | --- |
-| that | <code>[Pitch](#Pitch)</code> &#124; <code>String</code> | a Pitch or a pitch string |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
 
 <a name="Pitch+plusInterval"></a>
 ### pitch.plusInterval(interval) ⇒ <code>[Pitch](#Pitch)</code>
