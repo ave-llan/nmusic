@@ -58,9 +58,16 @@ Will not work if the object or array contains non-primitives.</p>
 </dl>
 ## Typedefs
 <dl>
-<dt><a href="#PitchString">PitchString</a> : <code>string</code></dt>
-<dd><p>a string consisting of a music Letter [A-G], optional accidental,
-                                and optional octave number. Must match the regular expression:
+<dt><a href="#MusicLetter">MusicLetter</a> : <code>string</code></dt>
+<dd><p>&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, or &#39;G&#39;</p>
+</dd>
+<dt><a href="#AccidentalString">AccidentalString</a> : <code>string</code></dt>
+<dd><p>&#39;#&#39; for sharp, &#39;b&#39; for flat.
+                                     &#39;##&#39;&#39; for double sharp, &#39;bb&#39; for double flat.</p>
+</dd>
+<dt><a href="#PitchString">PitchString</a> : <code><a href="#MusicLetter">MusicLetter</a></code></dt>
+<dd><p>a <a href="#MusicLetter">MusicLetter</a> + optional <a href="#AccidentalString">AccidentalString</a> +
+                                optional octave number. Must match the regular expression:
                                 /(A-G)(b{1,2}|#{1,2})?(\d{1,2})?/. If octave number is not provided,
                                 it will default to octave 4.</p>
 </dd>
@@ -763,10 +770,21 @@ Will not work if the object or array contains non-primitives.
 | --- | --- | --- |
 | obj | <code>object</code> &#124; <code>array</code> | an object array made up only of primitives |
 
+<a name="MusicLetter"></a>
+## MusicLetter : <code>string</code>
+'A', 'B', 'C', 'D', 'E', 'F', or 'G'
+
+**Kind**: global typedef  
+<a name="AccidentalString"></a>
+## AccidentalString : <code>string</code>
+'#' for sharp, 'b' for flat.
+                                     '##'' for double sharp, 'bb' for double flat.
+
+**Kind**: global typedef  
 <a name="PitchString"></a>
-## PitchString : <code>string</code>
-a string consisting of a music Letter [A-G], optional accidental,
-                                and optional octave number. Must match the regular expression:
+## PitchString : <code>[MusicLetter](#MusicLetter)</code>
+a [MusicLetter](#MusicLetter) + optional [AccidentalString](#AccidentalString) +
+                                optional octave number. Must match the regular expression:
                                 /(A-G)(b{1,2}|#{1,2})?(\d{1,2})?/. If octave number is not provided,
                                 it will default to octave 4.
 
