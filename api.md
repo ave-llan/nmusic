@@ -2,7 +2,7 @@
 <dl>
 <dt><a href="#Key">Key</a></dt>
 <dd></dd>
-<dt><a href="#PitchClassString">PitchClassString</a> : <code>string</code></dt>
+<dt><a href="#Pitch">Pitch</a></dt>
 <dd></dd>
 </dl>
 ## Functions
@@ -71,6 +71,9 @@ Will not work if the object or array contains non-primitives.</p>
                                 /(A-G)(b{1,2}|#{1,2})?(\d{1,2})?/. Accidental and octave number are optional,
                                 but if octave number is not provided, it will default to octave 4.</p>
 </dd>
+<dt><a href="#PitchClassString">PitchClassString</a> : <code>string</code></dt>
+<dd><p><a href="#MusicLetter">MusicLetter</a> + [<a href="#AccidentalString">AccidentalString</a>].</p>
+</dd>
 </dl>
 <a name="Key"></a>
 ## Key
@@ -79,7 +82,7 @@ Will not work if the object or array contains non-primitives.</p>
 
 | Name | Type | Description |
 | --- | --- | --- |
-| tonic | <code>Pitch</code> | the tonic of this scale. Although all Pitch instances have an octave number, it is not used in the Key methods. |
+| tonic | <code>[Pitch](#Pitch)</code> | the tonic of this scale. Although all Pitch instances have an octave number, it is not used in the Key methods. |
 | modeName | <code>string</code> | a string representing the mode name. If custom mode is provided, defaults to 'custom-scale' |
 | mode | <code>Array.&lt;string&gt;</code> | an array of interval strings representing the interval each scale degree is from tonic |
 | scale | <code>[Array.&lt;PitchString&gt;](#PitchString)</code> | an array of pitch class strings |
@@ -90,9 +93,9 @@ Will not work if the object or array contains non-primitives.</p>
   * [.toString()](#Key+toString) ⇒ <code>String</code>
   * [.inKey(pitch)](#Key+inKey) ⇒ <code>boolean</code>
   * [.accidentalOn(pitch)](#Key+accidentalOn) ⇒ <code>string</code>
-  * [.pitchAtDegree(degree)](#Key+pitchAtDegree) ⇒ <code>Pitch</code>
+  * [.pitchAtDegree(degree)](#Key+pitchAtDegree) ⇒ <code>[Pitch](#Pitch)</code>
   * [.scaleDegree(pitch)](#Key+scaleDegree) ⇒ <code>number</code>
-  * [.plusInterval(pitch, intervalSize)](#Key+plusInterval) ⇒ <code>Pitch</code>
+  * [.plusInterval(pitch, intervalSize)](#Key+plusInterval) ⇒ <code>[Pitch](#Pitch)</code>
 
 <a name="new_Key_new"></a>
 ### new Key(tonic, mode)
@@ -102,7 +105,7 @@ to octave number.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| tonic | <code>Pitch</code> &#124; <code>[PitchString](#PitchString)</code> | the [tonic](@link https://en.wikipedia.org/wiki/Tonic_(music)) of this scale. Octave number may be provided, but do not affect the Key methods. |
+| tonic | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | the [tonic](@link https://en.wikipedia.org/wiki/Tonic_(music)) of this scale. Octave number may be provided, but do not affect the Key methods. |
 | mode | <code>string</code> &#124; <code>Array.&lt;string&gt;</code> | a string representing a mode name (minor, major, dorian) or an array of interval strings representing the interval each scale degree is from tonic |
 
 <a name="Key+toString"></a>
@@ -118,7 +121,7 @@ is this pitch a member of this key?
 
 | Param | Type | Description |
 | --- | --- | --- |
-| pitch | <code>Pitch</code> &#124; <code>[PitchString](#PitchString)</code> | a pitch string or Pitch |
+| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a pitch string or Pitch |
 
 **Example**  
 ```js
@@ -138,15 +141,15 @@ to be in the key
 
 | Param | Type | Description |
 | --- | --- | --- |
-| pitch | <code>Pitch</code> &#124; <code>[PitchString](#PitchString)</code> | a pitch string or Pitch |
+| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a pitch string or Pitch |
 
 <a name="Key+pitchAtDegree"></a>
-### key.pitchAtDegree(degree) ⇒ <code>Pitch</code>
+### key.pitchAtDegree(degree) ⇒ <code>[Pitch](#Pitch)</code>
 returns the Pitch at the requested scale degree. Although Pitches default to octave
 number 4, this should be thought of as a pitch class
 
 **Kind**: instance method of <code>[Key](#Key)</code>  
-**Returns**: <code>Pitch</code> - a pitch class string  
+**Returns**: <code>[Pitch](#Pitch)</code> - a pitch class string  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -167,7 +170,7 @@ returns the scale degree of this pitch or -1 if it is not in the key
 
 | Param | Type | Description |
 | --- | --- | --- |
-| pitch | <code>Pitch</code> &#124; <code>[PitchString](#PitchString)</code> | a pitch string or Pitch |
+| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a pitch string or Pitch |
 
 **Example**  
 ```js
@@ -176,15 +179,15 @@ a_major.scaleDegree('C3')   => -1
 a_major.scaleDegree('C#3')  => 3
 ```
 <a name="Key+plusInterval"></a>
-### key.plusInterval(pitch, intervalSize) ⇒ <code>Pitch</code>
+### key.plusInterval(pitch, intervalSize) ⇒ <code>[Pitch](#Pitch)</code>
 gets the correct pitch in the key which is the given interval size away
 
 **Kind**: instance method of <code>[Key](#Key)</code>  
-**Returns**: <code>Pitch</code> - the resulting Pitch  
+**Returns**: <code>[Pitch](#Pitch)</code> - the resulting Pitch  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| pitch | <code>Pitch</code> &#124; <code>[PitchString](#PitchString)</code> | the starting Pitch or pitch string |
+| pitch | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | the starting Pitch or pitch string |
 | intervalSize | <code>number</code> | an interval as a positive or negative number. |
 
 **Example**  
@@ -195,19 +198,40 @@ a_flat_major.plusInterval('C4', -2)  => Pitch: Bb3
 a_flat_major.plusInterval('Eb2', 4)  => Pitch: Ab2
 a_flat_major.plusInterval('G5', -10) => Pitch: Eb4
 ```
-<a name="PitchClassString"></a>
-## PitchClassString : <code>string</code>
+<a name="Pitch"></a>
+## Pitch
 **Kind**: global class  
-**Link**: same as [PitchString](#PitchString) but without octave number.  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
 | Pitch.name | <code>[PitchString](#PitchString)</code> | this pitch in scientific pitch notation |
 
-<a name="new_PitchClassString_new"></a>
-### new PitchClassString(sciPitch)
-[MusicLetter](#MusicLetter) + [[AccidentalString](#AccidentalString)].
+
+* [Pitch](#Pitch)
+  * [new Pitch(sciPitch)](#new_Pitch_new)
+  * [.toString()](#Pitch+toString) ⇒ <code>[PitchString](#PitchString)</code>
+  * [.valueOf()](#Pitch+valueOf) ⇒ <code>Number</code>
+  * [.equals(that)](#Pitch+equals) ⇒ <code>Boolean</code>
+  * [.isEnharmonic(that)](#Pitch+isEnharmonic) ⇒ <code>Boolean</code>
+  * [.isHigher(that)](#Pitch+isHigher) ⇒ <code>Boolean</code>
+  * [.sciPitch()](#Pitch+sciPitch) ⇒ <code>[PitchString](#PitchString)</code>
+  * [.letter()](#Pitch+letter) ⇒ <code>[MusicLetter](#MusicLetter)</code>
+  * [.accidental()](#Pitch+accidental) ⇒ <code>[AccidentalString](#AccidentalString)</code>
+  * [.octave()](#Pitch+octave) ⇒ <code>Number</code>
+  * [.pitchClass()](#Pitch+pitchClass) ⇒ <code>[PitchClassString](#PitchClassString)</code>
+  * [.numAccidental()](#Pitch+numAccidental) ⇒ <code>Number</code>
+  * [.midi()](#Pitch+midi) ⇒ <code>Number</code>
+  * [.semitonesTo(that)](#Pitch+semitonesTo) ⇒ <code>Number</code>
+  * [.intervalSize(that)](#Pitch+intervalSize) ⇒ <code>Number</code>
+  * [.simpleIntervalSize(that)](#Pitch+simpleIntervalSize) ⇒ <code>Number</code>
+  * [.interval(that)](#Pitch+interval) ⇒ <code>String</code>
+  * [.simpleInterval(that)](#Pitch+simpleInterval) ⇒ <code>String</code>
+  * [.plusInterval(interval)](#Pitch+plusInterval) ⇒ <code>[Pitch](#Pitch)</code>
+
+<a name="new_Pitch_new"></a>
+### new Pitch(sciPitch)
+Creates a new immutable Pitch or if given an existing Pitch, returns it.
 
 **Throws**:
 
@@ -216,19 +240,8 @@ a_flat_major.plusInterval('G5', -10) => Pitch: Eb4
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sciPitch | <code>[PitchString](#PitchString)</code> &#124; <code>Pitch</code> | a pitch string in scientific pitch notation or a Pitch. |
+| sciPitch | <code>[PitchString](#PitchString)</code> &#124; <code>[Pitch](#Pitch)</code> | a pitch string in scientific pitch notation or a Pitch. |
 
-**Example**  
-```js
-'C'
-'Eb'
-'F#'
-'F##'
-'Dbb'
-
-/**
-Creates a new immutable Pitch or if given an existing Pitch, returns it.
-```
 **Example**  
 ```js
 var p = new Pitch('Bb3')
@@ -240,6 +253,159 @@ p2 instanceof Pitch  => true
 var p3 = Pitch(p2)
 p2 === p3            => true
 // this can be used to write functions which accept pitch strings or Pitches as a parameter
+```
+<a name="Pitch+toString"></a>
+### pitch.toString() ⇒ <code>[PitchString](#PitchString)</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>[PitchString](#PitchString)</code> - string in scientfic pitch notation  
+<a name="Pitch+valueOf"></a>
+### pitch.valueOf() ⇒ <code>Number</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Number</code> - the midi number of this pitch, so enharmonic notes will be equal  
+**See**: [pitch.midi()](#Pitch+midi)  
+<a name="Pitch+equals"></a>
+### pitch.equals(that) ⇒ <code>Boolean</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Boolean</code> - is this pitch spelled the same as that pitch?  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
+
+<a name="Pitch+isEnharmonic"></a>
+### pitch.isEnharmonic(that) ⇒ <code>Boolean</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Boolean</code> - does this pitch sound identical to that pitch?  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
+
+<a name="Pitch+isHigher"></a>
+### pitch.isHigher(that) ⇒ <code>Boolean</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Boolean</code> - does this pitch sound higher than that pitch?  
+**See**: [isHigher](#isHigher)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
+
+<a name="Pitch+sciPitch"></a>
+### pitch.sciPitch() ⇒ <code>[PitchString](#PitchString)</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>[PitchString](#PitchString)</code> - in [scientfic pitch notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation)
+(same as pitch.name)  
+<a name="Pitch+letter"></a>
+### pitch.letter() ⇒ <code>[MusicLetter](#MusicLetter)</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>[MusicLetter](#MusicLetter)</code> - will return 'A', 'B', 'C', 'D', 'E', 'F', or 'G'  
+<a name="Pitch+accidental"></a>
+### pitch.accidental() ⇒ <code>[AccidentalString](#AccidentalString)</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>[AccidentalString](#AccidentalString)</code> - 'b', 'bb', '#', '##' (double sharp is not 'x'),
+or '', the empty string if there is no accidental.  
+<a name="Pitch+octave"></a>
+### pitch.octave() ⇒ <code>Number</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Number</code> - the octave number (C4 is
+[middle C](https://en.wikipedia.org/wiki/C_(musical_note)#Middle_C))  
+<a name="Pitch+pitchClass"></a>
+### pitch.pitchClass() ⇒ <code>[PitchClassString](#PitchClassString)</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>[PitchClassString](#PitchClassString)</code> - the [pitch class](https://en.wikipedia.org/wiki/Pitch_class),
+same as [pitch.sciPitch()](#Pitch+sciPitch) but without octave number.  
+<a name="Pitch+numAccidental"></a>
+### pitch.numAccidental() ⇒ <code>Number</code>
+returns the number of accidentals on this letter:
+positive for sharps, negative for flats.
+
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Number</code> - how many half steps from its letter, will be in the range [-2, 2]  
+**Example**  
+```js
+var p = new Pitch('Abb3')
+p.halfSteps() => -2
+```
+<a name="Pitch+midi"></a>
+### pitch.midi() ⇒ <code>Number</code>
+What is the [midi number](http://newt.phys.unsw.edu.au/jw/notes.html) of this pitch?
+
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Number</code> - the midi number for this pitch. C4 is 60.  
+**Example**  
+```js
+toMidi('C4')    => 60
+toMidi('B#3')   => 60
+toMidi('Bb3')   => 58
+toMidi('A#3')   => 58
+```
+<a name="Pitch+semitonesTo"></a>
+### pitch.semitonesTo(that) ⇒ <code>Number</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Number</code> - how many half steps are there between these pitches?  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
+
+<a name="Pitch+intervalSize"></a>
+### pitch.intervalSize(that) ⇒ <code>Number</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Number</code> - the interval size between these pitches  
+**See**: [intervalSize](#intervalSize)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
+
+<a name="Pitch+simpleIntervalSize"></a>
+### pitch.simpleIntervalSize(that) ⇒ <code>Number</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>Number</code> - the simple interval size between these pitches in range [1,7]  
+**See**: [simple](#intervalSize.simple)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
+
+<a name="Pitch+interval"></a>
+### pitch.interval(that) ⇒ <code>String</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>String</code> - the interval between these pitches  
+**See**: [interval](#interval)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
+
+<a name="Pitch+simpleInterval"></a>
+### pitch.simpleInterval(that) ⇒ <code>String</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>String</code> - the simple interval between these pitches  
+**See**: [simple](#interval.simple)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| that | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | a Pitch or a pitch string |
+
+<a name="Pitch+plusInterval"></a>
+### pitch.plusInterval(interval) ⇒ <code>[Pitch](#Pitch)</code>
+**Kind**: instance method of <code>[Pitch](#Pitch)</code>  
+**Returns**: <code>[Pitch](#Pitch)</code> - the resulting Pitch  
+**See**: [plusInterval](#plusInterval)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| interval | <code>String</code> &#124; <code>Number</code> | an interval string or number with or without quality. If   interval quality is not provided, accidentals on this Pitch will be ignored. |
+
+**Example**  
+```js
+var pitch_C4 = new Pitch('C4')
+plusInterval(pitch_C4, 10)     => Pitch: E5
+plusInterval(pitch_C4, -10)    => Pitch: A2
+plusInterval(pitch_C4, 'm10')  => Pitch: Eb5
+plusInterval(pitch_C4, '-d7')  => Pitch: D#3
 ```
 <a name="modeIntervals"></a>
 ## modeIntervals(modeName) ⇒ <code>Array.&lt;string&gt;</code>
@@ -634,4 +800,18 @@ Will not work if the object or array contains non-primitives.
 'F#2'    // F# in octave 2
 'F##7'   // F double sharp in octave 7
 'Dbb5'   // D double flat in octave 5
+```
+<a name="PitchClassString"></a>
+## PitchClassString : <code>string</code>
+[MusicLetter](#MusicLetter) + [[AccidentalString](#AccidentalString)].
+
+**Kind**: global typedef  
+**Link**: same as [PitchString](#PitchString) but without octave number.  
+**Example**  
+```js
+'C'
+'Eb'
+'F#'
+'F##'
+'Dbb'
 ```
