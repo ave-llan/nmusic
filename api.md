@@ -36,7 +36,7 @@ return false if the string or number is not valid</p>
 <dd><p>parses a pitch string and return its components in an object or
 false if the string is not valid</p>
 </dd>
-<dt><a href="#plusInterval">plusInterval(sciPitch, interval)</a> ⇒ <code>String</code> | <code>function</code></dt>
+<dt><a href="#plusInterval">plusInterval(sciPitch, interval)</a> ⇒ <code><a href="#PitchString">PitchString</a></code> | <code>function</code></dt>
 <dd><p>given pitch string plus given interval string equals new pitch string</p>
 <p>Optionally, give only one parameter and get back a function with that parameter
 set as the default.</p>
@@ -467,8 +467,8 @@ the interval quality between two pitch strings
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sciPitch1 | <code>String</code> | a pitch in scientific pitch notation. |
-| sciPitch2 | <code>String</code> | a pitch in scientific pitch notation. |
+| sciPitch1 | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation. |
+| sciPitch2 | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation. |
 
 **Example**  
 ```js
@@ -493,8 +493,8 @@ the first argument is higher than the second.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sciPitch1 | <code>String</code> | a pitch in scientific pitch notation. |
-| sciPitch2 | <code>String</code> | a pitch in scientific pitch notation. |
+| sciPitch1 | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation. |
+| sciPitch2 | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation. |
 
 **Example**  
 ```js
@@ -518,8 +518,8 @@ Contrary to standard practice, an octave is considered compound and reduces to 1
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sciPitch1 | <code>String</code> | a pitch in scientific pitch notation. |
-| sciPitch2 | <code>String</code> | a pitch in scientific pitch notation. |
+| sciPitch1 | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation. |
+| sciPitch2 | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation. |
 
 **Example**  
 ```js
@@ -541,8 +541,8 @@ the interval between two pitch strings
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sciPitch1 | <code>String</code> | a pitch in scientific pitch notation. |
-| sciPitch2 | <code>String</code> | a pitch in scientific pitch notation. |
+| sciPitch1 | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation. |
+| sciPitch2 | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation. |
 
 **Example**  
 ```js
@@ -588,8 +588,8 @@ does this pitch sound higher than that pitch?
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sciPitch1 | <code>String</code> | a pitch in scientific pitch notation. |
-| sciPitch2 | <code>String</code> | a pitch in scientific pitch notation. |
+| sciPitch1 | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation. |
+| sciPitch2 | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation. |
 
 **Example**  
 ```js
@@ -643,7 +643,7 @@ with the following properties:
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sciPitch | <code>string</code> | a pitch in scientific pitch notation |
+| sciPitch | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation |
 
 **Example**  
 ```js
@@ -651,14 +651,14 @@ parsePitch('Bb3')   => {letter: 'B', accidental: 'b', numAccidental: -1, octave:
 parsePitch('Xb4')   => false
 ```
 <a name="plusInterval"></a>
-## plusInterval(sciPitch, interval) ⇒ <code>String</code> &#124; <code>function</code>
+## plusInterval(sciPitch, interval) ⇒ <code>[PitchString](#PitchString)</code> &#124; <code>function</code>
 given pitch string plus given interval string equals new pitch string
 
 Optionally, give only one parameter and get back a function with that parameter
 set as the default.
 
 **Kind**: global function  
-**Returns**: <code>String</code> &#124; <code>function</code> - the resulting pitch string, or if given only one argument, returns
+**Returns**: <code>[PitchString](#PitchString)</code> &#124; <code>function</code> - the resulting pitch string, or if given only one argument, returns
 a function with the given argument set as a default.  
 **Throws**:
 
@@ -667,7 +667,7 @@ a function with the given argument set as a default.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sciPitch | <code>String</code> | a pitch in scientific pitch notation. |
+| sciPitch | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation. |
 | interval | <code>String</code> &#124; <code>Number</code> | an interval string or number with or without quality. If quality                                   is not provided, accidentals on given pitch will be ignored. |
 
 **Example**  
@@ -695,8 +695,8 @@ the number of semitones between these two pitch strings
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sciPitch1 | <code>String</code> | a pitch in scientific pitch notation. |
-| sciPitch2 | <code>String</code> | a pitch in scientific pitch notation. |
+| sciPitch1 | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation. |
+| sciPitch2 | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation. |
 
 **Example**  
 ```js
@@ -742,7 +742,7 @@ midi number.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sciPitch | <code>String</code> | a pitch in scientific pitch notation. |
+| sciPitch | <code>[PitchString](#PitchString)</code> | a pitch in scientific pitch notation. |
 
 **Example**  
 ```js
