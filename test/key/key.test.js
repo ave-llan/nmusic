@@ -112,3 +112,16 @@ test('Key.plusInterval()', function (t) {
 
   t.end()
 })
+
+test('Key.range()', function (t) {
+  var d_minor = new Key('D', 'minor')
+  var Db_major = new Key('Db', 'major')
+
+  t.deepEqual(d_minor.range('A3', 'E4'),
+    'A3 Bb3 C4 D4 E4'.split(' ').map(Pitch))
+
+  t.deepEqual(Db_major.range('Eb3', 'F5'),
+    'Eb3 F3 Gb3 Ab3 Bb3 C4 Db4 Eb4 F4 Gb4 Ab4 Bb4 C5 Db5 Eb5 F5'.split(' ').map(Pitch))
+
+  t.end()
+})

@@ -96,6 +96,7 @@ Will not work if the object or array contains non-primitives.</p>
   * [.pitchAtDegree(degree)](#Key+pitchAtDegree) ⇒ <code>[Pitch](#Pitch)</code>
   * [.scaleDegree(pitch)](#Key+scaleDegree) ⇒ <code>number</code>
   * [.plusInterval(pitch, intervalSize)](#Key+plusInterval) ⇒ <code>[Pitch](#Pitch)</code>
+  * [.range(lo, hi)](#Key+range) ⇒ <code>[Array.&lt;Pitch&gt;](#Pitch)</code>
 
 <a name="new_Key_new"></a>
 ### new Key(tonic, mode)
@@ -198,6 +199,23 @@ a_flat_major.plusInterval('C4', -2)  => Pitch: Bb3
 a_flat_major.plusInterval('Eb2', 4)  => Pitch: Ab2
 a_flat_major.plusInterval('G5', -10) => Pitch: Eb4
 ```
+<a name="Key+range"></a>
+### key.range(lo, hi) ⇒ <code>[Array.&lt;Pitch&gt;](#Pitch)</code>
+Get all the notes in this key between lo and hi (both inclusive)
+
+**Kind**: instance method of <code>[Key](#Key)</code>  
+**Returns**: <code>[Array.&lt;Pitch&gt;](#Pitch)</code> - an array of Pitches with all the notes of this key
+between lo and hi (both inclusive)  
+**Throws**:
+
+- an Error if lo and hi are not both [inKey](#Key+inKey)
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| lo | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | the starting Pitch or pitch string |
+| hi | <code>[Pitch](#Pitch)</code> &#124; <code>[PitchString](#PitchString)</code> | the ending Pitch or pitch string |
+
 <a name="Pitch"></a>
 ## Pitch
 **Kind**: global class  
