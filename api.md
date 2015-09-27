@@ -48,6 +48,9 @@ set as the default.</p>
 <dd><p>simplify compound intervals to within the range of 1-7. Works for
 negative intervals as well.</p>
 </dd>
+<dt><a href="#sortPitches">sortPitches(pitches)</a> ⇒ <code><a href="#PitchString">Array.&lt;PitchString&gt;</a></code></dt>
+<dd><p>helper function to sort an array of PitchStrings from lowest to highest</p>
+</dd>
 <dt><a href="#toMidi">toMidi(sciPitch)</a> ⇒ <code>Number</code></dt>
 <dd><p>the <a href="http://newt.phys.unsw.edu.au/jw/notes.html">midi number</a> of this pitch string</p>
 </dd>
@@ -755,6 +758,18 @@ simplifyIntervalSize(-12)  => -5
 simplifyIntervalSize(-4)   => -4
 simplifyIntervalSize(8)    => 1
 ```
+<a name="sortPitches"></a>
+## sortPitches(pitches) ⇒ <code>[Array.&lt;PitchString&gt;](#PitchString)</code>
+helper function to sort an array of PitchStrings from lowest to highest
+
+**Kind**: global function  
+**Returns**: <code>[Array.&lt;PitchString&gt;](#PitchString)</code> - a new clone of the provided pitch string
+array sorted from low pitch to high pitch  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| pitches | <code>[Array.&lt;PitchString&gt;](#PitchString)</code> | an array of pitch strings |
+
 <a name="toMidi"></a>
 ## toMidi(sciPitch) ⇒ <code>Number</code>
 the [midi number](http://newt.phys.unsw.edu.au/jw/notes.html) of this pitch string
