@@ -31,7 +31,9 @@ test('interval()', function (t) {
   t.equal(interval('C4', 'A5'), 'M13')
   t.equal(interval('E5', 'Cb4'), 'A10')
   t.equal(interval('F#2', 'C#4'), 'P12')
-
+  t.equal(interval('Db4', 'D#4'), 'AA1')
+  t.equal(interval('Eb4', 'F##4'), 'AA2')
+  t.equal(interval('Eb', 'D#'), 'd2')
   t.end()
 })
 
