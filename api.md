@@ -689,8 +689,8 @@ Optionally, give only one parameter and get back a function with that parameter
 set as the default.
 
 **Kind**: global function  
-**Returns**: <code>[PitchString](#PitchString)</code> &#124; <code>function</code> - the resulting pitch string, or if given only one argument, returns
-a function with the given argument set as a default.  
+**Returns**: <code>[PitchString](#PitchString)</code> &#124; <code>function</code> - the resulting pitch string, or if one argument is null, returns
+a function with the provided argument set as a default.  
 **Throws**:
 
 - an error if pitch string or interval string is not valid
@@ -708,9 +708,9 @@ plusInterval('C4', -10)    => 'A2'
 plusInterval('C4', 'm10')  => 'Eb5'
 plusInterval('C4', '-d7')  => 'D#3'
 var majorscale = ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'M7', 'P8']
-majorscale.map(plusInterval('Eb4'))
+majorscale.map(plusInterval('Eb4', null))
 => ['Eb4', 'F4', 'G4', 'Ab4', 'Bb4', 'C5', 'D5', 'Eb5']
-majorscale.map(plusInterval('Eb4')).map(plusInterval('-m9'))
+majorscale.map(plusInterval('Eb4', null)).map(plusInterval(null, '-m9'))
 => ['D3', 'E3', 'F#3', 'G3', 'A3', 'B3', 'C#4', 'D4']
 ```
 <a name="semitonesBetween"></a>
