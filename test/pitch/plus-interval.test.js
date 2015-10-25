@@ -91,6 +91,11 @@ test('plusInterval works for postivie intervals with quality', function (t) {
   t.equal(plusInterval('B3', 'P12'), 'F#5')
   t.equal(plusInterval('A2', 'M17'), 'C#5')
 
+  t.equal(plusInterval('Gb4', 'A1'), 'G4')
+  t.equal(plusInterval('Gb4', 'AA1'), 'G#4')
+  t.equal(plusInterval('C#4', 'd5'), 'G4')
+  t.equal(plusInterval('C#4', 'dd5'), 'Gb4')
+
   t.end()
 })
 
