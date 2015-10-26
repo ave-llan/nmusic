@@ -179,6 +179,8 @@ test('plusInterval returns working function when given only pitch', function (t)
     ['Eb4', 'F4', 'G4', 'Ab4', 'Bb4', 'C5', 'D5', 'Eb5'])
   t.deepEqual(majorscale.map(plusInterval('D3')),
     ['D3', 'E3', 'F#3', 'G3', 'A3', 'B3', 'C#4', 'D4'])
+  t.deepEqual(majorscale.map(plusInterval('A4')),
+    ['A4', 'B4', 'C#5', 'D5', 'E5', 'F#5', 'G#5', 'A5'])
 
   t.end()
 })
@@ -188,6 +190,10 @@ test('plusInterval returns working function when given only interval', function 
 
   t.deepEqual(major_Eb.map(plusInterval(null, '-m9')),
     ['D3', 'E3', 'F#3', 'G3', 'A3', 'B3', 'C#4', 'D4'])
+  t.deepEqual(major_Eb.map(plusInterval(null, 'A4')),
+    ['A4', 'B4', 'C#5', 'D5', 'E5', 'F#5', 'G#5', 'A5'])
+  t.deepEqual(major_Eb.map(plusInterval(null, '-d5')),
+    ['A3', 'B3', 'C#4', 'D4', 'E4', 'F#4', 'G#4', 'A4'])
 
   t.end()
 })
