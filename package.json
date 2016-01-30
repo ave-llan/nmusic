@@ -1,6 +1,6 @@
 {
   "name": "nmusic",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "main": "./lib/nmusic.js",
   "description": "a JavaScript music library for easy programmatic music composition",
   "directories": {
